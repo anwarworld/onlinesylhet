@@ -14,7 +14,9 @@ class Home extends CI_Controller {
         $data['page'] = 'index';
         $data['page_title'] = 'Home | Welcome to kintayniba.com';
         $data['sliders'] = $this->home_mod->getSliders();
-        $data['latest_producs'] = Common::getLatestProducts();
+        $data['latest_producs'] = Common::getProductsByType(4);
+        $data['featured_producs'] = Common::getProductsByType(2);
+        $data['deal_producs'] = Common::getProductsByType(3);
         $this->load->view('main', $data);
     }
 

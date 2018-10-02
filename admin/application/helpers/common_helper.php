@@ -73,10 +73,10 @@ class Common {
 
     public static function getProductTypes() {
         $data = array(
-            1 => 'Featured',
-            2 => 'Deal Of the Day',
-            3 => 'Latest',
-            4 => 'Featured'
+            1 => 'General Product',
+            2 => 'Featured Product',
+            3 => 'Deal Of the Day',
+            4 => 'Latest Product'
         );
         return $data;
     }

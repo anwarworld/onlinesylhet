@@ -39,6 +39,7 @@ class Products extends CI_Controller {
         $data['parent_cateories'] = $this->products_mod->getCategories(0);
         $data['brands'] = $this->products_mod->getBrands();
         $data['sellers'] = $this->products_mod->getSellers();
+        $data['product_types']=  Common::getProductTypes();
         $data['nav_path'] = array(0 => array('title' => 'Products', 'url' => site_url('products')), 1 => array('title' => 'Add User', 'url' => ''));
         $this->load->view('main', $data);
     }
@@ -69,6 +70,7 @@ class Products extends CI_Controller {
         $data['parent_cateories'] = $this->products_mod->getCategories(0);
         $data['brands'] = $this->products_mod->getBrands();
         $data['sellers'] = $this->products_mod->getSellers();
+        $data['product_types']=  Common::getProductTypes();
         $data['nav_path'] = array(0 => array('title' => 'Products', 'url' => site_url('products')), 1 => array('title' => 'Add User', 'url' => ''));
         $this->load->view('main', $data);
     }

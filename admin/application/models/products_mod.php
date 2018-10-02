@@ -57,7 +57,7 @@ class products_mod extends CI_Model {
         $product_price_unit = filter_input(INPUT_POST, 'product_price_unit');
         $product_details = filter_input(INPUT_POST, 'product_details');
         $product_status = filter_input(INPUT_POST, 'product_status');
-
+        $product_type = filter_input(INPUT_POST, 'product_type');
         if ($_FILES['image']['name'] != '') {
             $product_image = $this->addImage();
         } else {
@@ -77,7 +77,9 @@ class products_mod extends CI_Model {
             'product_price_unit' => $product_price_unit,
             'product_details' => $product_details,
             'product_image' => $product_image,
-            'product_status' => $product_status
+            'product_status' => $product_status,
+            'product_type' => $product_type,
+            'product_type_expire' => Date()
         );
         return $this->db->insert('products', $data);
     }
@@ -137,6 +139,7 @@ class products_mod extends CI_Model {
         $product_price_unit = filter_input(INPUT_POST, 'product_price_unit');
         $product_details = filter_input(INPUT_POST, 'product_details');
         $product_status = filter_input(INPUT_POST, 'product_status');
+        $product_type = filter_input(INPUT_POST, 'product_type');
         if ($_FILES['image']['name'] != '') {
             $pre_image = filter_input(INPUT_POST, 'h_image');
             $product_image = $this->addImage($pre_image);
@@ -149,7 +152,6 @@ class products_mod extends CI_Model {
             'brand_id' => $brand[0],
             'brand_name' => $brand[1],
             'seller_id' => $seller[0],
-//            'seller_name' => $seller[1],
             'product_name' => $product_name,
             'product_regular_price' => $product_regular_price,
             'product_discount' => $product_discount,
@@ -157,7 +159,8 @@ class products_mod extends CI_Model {
             'product_price_unit' => $product_price_unit,
             'product_details' => $product_details,
             'product_image' => $product_image,
-            'product_status' => $product_status
+            'product_status' => $product_status,
+            'product_type' => $product_type
         );
         $this->db->where('product_id', $product_id);
         return $this->db->update('products', $data);

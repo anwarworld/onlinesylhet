@@ -11,6 +11,18 @@
             <form role="form" action="<?= $form_action ?>" method="POST" enctype="multipart/form-data">
                 <div class="box-body">
                     <div class="form-group">
+                        <label>Product Type</label>
+                        <select name="product_type" class="form-control">
+                            <?php
+                            foreach ($product_types as $key => $value):
+                                ?>
+                                <option <?php echo ($key == $product_type) ? 'selected="selected"' : ''; ?> value="<?= $key ?>"><?= $value ?></option>
+                                <?php
+                            endforeach;
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label>Product Category</label>
                         <select name="category" class="form-control select2">
                             <?php

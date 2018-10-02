@@ -75,11 +75,25 @@ class Common {
         return $query->result_array();
     }
 
-    public static function getLatestProducts() {
+    public static function getProductsByType($productType = 1) {
         $CI = & get_instance();
-        $sql = "SELECT * FROM products WHERE product_status = ? order by product_date desc limit 0,4";
-        $query = $CI->db->query($sql, array(1));
+        $sql = "SELECT * FROM products WHERE product_status = ? AND product_type = ? order by product_date desc limit 0,4";
+        $query = $CI->db->query($sql, array(1, $productType));
         return $query->result_array();
+    }
+
+    public static function getProductTypes($productType = 0) {
+        $data = array(
+            1 => 'General Product',
+            2 => 'Featured Product',
+            3 => 'Deal Of the Day',
+            4 => 'Latest Product'
+        );
+        if ($productType > 0) {
+            return $data[$productType];
+        } else {
+            return $data;
+        }
     }
 
     public static function generateUUID() {

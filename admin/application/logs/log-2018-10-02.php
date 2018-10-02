@@ -691,3 +691,218 @@ INFO - 2018-10-02 08:14:56 --> Model "products_mod" initialized
 INFO - 2018-10-02 08:14:56 --> File loaded: H:\xampp\htdocs\cms\admin\application\views\main.php
 INFO - 2018-10-02 08:14:56 --> Final output sent to browser
 DEBUG - 2018-10-02 08:14:56 --> Total execution time: 0.3031
+INFO - 2018-10-02 08:56:31 --> Config Class Initialized
+INFO - 2018-10-02 08:56:32 --> Hooks Class Initialized
+DEBUG - 2018-10-02 08:56:32 --> UTF-8 Support Enabled
+INFO - 2018-10-02 08:56:32 --> Utf8 Class Initialized
+INFO - 2018-10-02 08:56:32 --> URI Class Initialized
+INFO - 2018-10-02 08:56:32 --> Router Class Initialized
+INFO - 2018-10-02 08:56:32 --> Output Class Initialized
+INFO - 2018-10-02 08:56:32 --> Security Class Initialized
+DEBUG - 2018-10-02 08:56:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 08:56:32 --> Input Class Initialized
+INFO - 2018-10-02 08:56:32 --> Language Class Initialized
+INFO - 2018-10-02 08:56:32 --> Loader Class Initialized
+INFO - 2018-10-02 08:56:32 --> Helper loaded: url_helper
+INFO - 2018-10-02 08:56:32 --> Helper loaded: common_helper
+INFO - 2018-10-02 08:56:32 --> Database Driver Class Initialized
+INFO - 2018-10-02 08:56:32 --> Helper loaded: form_helper
+INFO - 2018-10-02 08:56:32 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 08:56:32 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 08:56:32 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 08:56:32 --> Controller Class Initialized
+INFO - 2018-10-02 08:56:32 --> Model "products_mod" initialized
+INFO - 2018-10-02 08:56:32 --> File loaded: H:\xampp\htdocs\onlinesylhet\admin\application\views\main.php
+INFO - 2018-10-02 08:56:32 --> Final output sent to browser
+DEBUG - 2018-10-02 08:56:32 --> Total execution time: 0.2697
+INFO - 2018-10-02 08:56:34 --> Config Class Initialized
+INFO - 2018-10-02 08:56:34 --> Hooks Class Initialized
+DEBUG - 2018-10-02 08:56:34 --> UTF-8 Support Enabled
+INFO - 2018-10-02 08:56:34 --> Utf8 Class Initialized
+INFO - 2018-10-02 08:56:34 --> URI Class Initialized
+INFO - 2018-10-02 08:56:34 --> Router Class Initialized
+INFO - 2018-10-02 08:56:34 --> Output Class Initialized
+INFO - 2018-10-02 08:56:34 --> Security Class Initialized
+DEBUG - 2018-10-02 08:56:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 08:56:34 --> Input Class Initialized
+INFO - 2018-10-02 08:56:34 --> Language Class Initialized
+INFO - 2018-10-02 08:56:34 --> Loader Class Initialized
+INFO - 2018-10-02 08:56:34 --> Helper loaded: url_helper
+INFO - 2018-10-02 08:56:34 --> Helper loaded: common_helper
+INFO - 2018-10-02 08:56:34 --> Database Driver Class Initialized
+INFO - 2018-10-02 08:56:34 --> Helper loaded: form_helper
+INFO - 2018-10-02 08:56:34 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 08:56:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 08:56:34 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 08:56:34 --> Controller Class Initialized
+INFO - 2018-10-02 08:56:34 --> Model "products_mod" initialized
+INFO - 2018-10-02 08:56:35 --> File loaded: H:\xampp\htdocs\onlinesylhet\admin\application\views\main.php
+INFO - 2018-10-02 08:56:35 --> Final output sent to browser
+DEBUG - 2018-10-02 08:56:35 --> Total execution time: 0.2480
+INFO - 2018-10-02 17:46:49 --> Config Class Initialized
+INFO - 2018-10-02 17:46:49 --> Hooks Class Initialized
+DEBUG - 2018-10-02 17:46:49 --> UTF-8 Support Enabled
+INFO - 2018-10-02 17:46:49 --> Utf8 Class Initialized
+INFO - 2018-10-02 17:46:49 --> URI Class Initialized
+DEBUG - 2018-10-02 17:46:49 --> No URI present. Default controller set.
+INFO - 2018-10-02 17:46:49 --> Router Class Initialized
+INFO - 2018-10-02 17:46:49 --> Output Class Initialized
+INFO - 2018-10-02 17:46:49 --> Security Class Initialized
+DEBUG - 2018-10-02 17:46:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 17:46:50 --> Input Class Initialized
+INFO - 2018-10-02 17:46:50 --> Language Class Initialized
+INFO - 2018-10-02 17:46:50 --> Loader Class Initialized
+INFO - 2018-10-02 17:46:50 --> Helper loaded: url_helper
+INFO - 2018-10-02 17:46:50 --> Helper loaded: common_helper
+INFO - 2018-10-02 17:46:50 --> Database Driver Class Initialized
+INFO - 2018-10-02 17:46:50 --> Helper loaded: form_helper
+INFO - 2018-10-02 17:46:50 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 17:46:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 17:46:50 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 17:46:50 --> Controller Class Initialized
+INFO - 2018-10-02 17:46:50 --> Config Class Initialized
+INFO - 2018-10-02 17:46:50 --> Hooks Class Initialized
+DEBUG - 2018-10-02 17:46:50 --> UTF-8 Support Enabled
+INFO - 2018-10-02 17:46:50 --> Utf8 Class Initialized
+INFO - 2018-10-02 17:46:50 --> URI Class Initialized
+INFO - 2018-10-02 17:46:50 --> Router Class Initialized
+INFO - 2018-10-02 17:46:50 --> Output Class Initialized
+INFO - 2018-10-02 17:46:50 --> Security Class Initialized
+DEBUG - 2018-10-02 17:46:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 17:46:50 --> Input Class Initialized
+INFO - 2018-10-02 17:46:50 --> Language Class Initialized
+INFO - 2018-10-02 17:46:50 --> Loader Class Initialized
+INFO - 2018-10-02 17:46:50 --> Helper loaded: url_helper
+INFO - 2018-10-02 17:46:50 --> Helper loaded: common_helper
+INFO - 2018-10-02 17:46:50 --> Database Driver Class Initialized
+INFO - 2018-10-02 17:46:50 --> Helper loaded: form_helper
+INFO - 2018-10-02 17:46:50 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 17:46:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 17:46:51 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 17:46:51 --> Controller Class Initialized
+INFO - 2018-10-02 17:46:51 --> Model "users_mod" initialized
+INFO - 2018-10-02 17:46:51 --> File loaded: H:\xampp\htdocs\onlinesylhet\admin\application\views\login.php
+INFO - 2018-10-02 17:46:51 --> Final output sent to browser
+DEBUG - 2018-10-02 17:46:51 --> Total execution time: 0.7251
+INFO - 2018-10-02 17:46:58 --> Config Class Initialized
+INFO - 2018-10-02 17:46:58 --> Hooks Class Initialized
+DEBUG - 2018-10-02 17:46:58 --> UTF-8 Support Enabled
+INFO - 2018-10-02 17:46:58 --> Utf8 Class Initialized
+INFO - 2018-10-02 17:46:58 --> URI Class Initialized
+INFO - 2018-10-02 17:46:58 --> Router Class Initialized
+INFO - 2018-10-02 17:46:58 --> Output Class Initialized
+INFO - 2018-10-02 17:46:58 --> Security Class Initialized
+DEBUG - 2018-10-02 17:46:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 17:46:58 --> Input Class Initialized
+INFO - 2018-10-02 17:46:58 --> Language Class Initialized
+INFO - 2018-10-02 17:46:58 --> Loader Class Initialized
+INFO - 2018-10-02 17:46:58 --> Helper loaded: url_helper
+INFO - 2018-10-02 17:46:58 --> Helper loaded: common_helper
+INFO - 2018-10-02 17:46:58 --> Database Driver Class Initialized
+INFO - 2018-10-02 17:46:58 --> Helper loaded: form_helper
+INFO - 2018-10-02 17:46:58 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 17:46:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 17:46:58 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 17:46:58 --> Controller Class Initialized
+INFO - 2018-10-02 17:46:58 --> Model "users_mod" initialized
+INFO - 2018-10-02 17:46:58 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2018-10-02 17:46:58 --> Config Class Initialized
+INFO - 2018-10-02 17:46:59 --> Hooks Class Initialized
+DEBUG - 2018-10-02 17:46:59 --> UTF-8 Support Enabled
+INFO - 2018-10-02 17:46:59 --> Utf8 Class Initialized
+INFO - 2018-10-02 17:46:59 --> URI Class Initialized
+INFO - 2018-10-02 17:46:59 --> Router Class Initialized
+INFO - 2018-10-02 17:46:59 --> Output Class Initialized
+INFO - 2018-10-02 17:46:59 --> Security Class Initialized
+DEBUG - 2018-10-02 17:46:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 17:46:59 --> Input Class Initialized
+INFO - 2018-10-02 17:46:59 --> Language Class Initialized
+INFO - 2018-10-02 17:46:59 --> Loader Class Initialized
+INFO - 2018-10-02 17:46:59 --> Helper loaded: url_helper
+INFO - 2018-10-02 17:46:59 --> Helper loaded: common_helper
+INFO - 2018-10-02 17:46:59 --> Database Driver Class Initialized
+INFO - 2018-10-02 17:46:59 --> Helper loaded: form_helper
+INFO - 2018-10-02 17:46:59 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 17:46:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 17:46:59 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 17:46:59 --> Controller Class Initialized
+INFO - 2018-10-02 17:46:59 --> File loaded: H:\xampp\htdocs\onlinesylhet\admin\application\views\main.php
+INFO - 2018-10-02 17:46:59 --> Final output sent to browser
+DEBUG - 2018-10-02 17:46:59 --> Total execution time: 0.6981
+INFO - 2018-10-02 17:47:02 --> Config Class Initialized
+INFO - 2018-10-02 17:47:02 --> Hooks Class Initialized
+DEBUG - 2018-10-02 17:47:02 --> UTF-8 Support Enabled
+INFO - 2018-10-02 17:47:02 --> Utf8 Class Initialized
+INFO - 2018-10-02 17:47:02 --> URI Class Initialized
+INFO - 2018-10-02 17:47:03 --> Router Class Initialized
+INFO - 2018-10-02 17:47:03 --> Output Class Initialized
+INFO - 2018-10-02 17:47:03 --> Security Class Initialized
+DEBUG - 2018-10-02 17:47:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 17:47:03 --> Input Class Initialized
+INFO - 2018-10-02 17:47:03 --> Language Class Initialized
+INFO - 2018-10-02 17:47:03 --> Loader Class Initialized
+INFO - 2018-10-02 17:47:03 --> Helper loaded: url_helper
+INFO - 2018-10-02 17:47:03 --> Helper loaded: common_helper
+INFO - 2018-10-02 17:47:03 --> Database Driver Class Initialized
+INFO - 2018-10-02 17:47:03 --> Helper loaded: form_helper
+INFO - 2018-10-02 17:47:03 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 17:47:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 17:47:03 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 17:47:03 --> Controller Class Initialized
+INFO - 2018-10-02 17:47:03 --> File loaded: H:\xampp\htdocs\onlinesylhet\admin\application\views\main.php
+INFO - 2018-10-02 17:47:03 --> Final output sent to browser
+DEBUG - 2018-10-02 17:47:03 --> Total execution time: 0.9666
+INFO - 2018-10-02 17:47:07 --> Config Class Initialized
+INFO - 2018-10-02 17:47:07 --> Hooks Class Initialized
+DEBUG - 2018-10-02 17:47:07 --> UTF-8 Support Enabled
+INFO - 2018-10-02 17:47:07 --> Utf8 Class Initialized
+INFO - 2018-10-02 17:47:07 --> URI Class Initialized
+INFO - 2018-10-02 17:47:07 --> Router Class Initialized
+INFO - 2018-10-02 17:47:07 --> Output Class Initialized
+INFO - 2018-10-02 17:47:07 --> Security Class Initialized
+DEBUG - 2018-10-02 17:47:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 17:47:07 --> Input Class Initialized
+INFO - 2018-10-02 17:47:07 --> Language Class Initialized
+INFO - 2018-10-02 17:47:07 --> Loader Class Initialized
+INFO - 2018-10-02 17:47:07 --> Helper loaded: url_helper
+INFO - 2018-10-02 17:47:07 --> Helper loaded: common_helper
+INFO - 2018-10-02 17:47:07 --> Database Driver Class Initialized
+INFO - 2018-10-02 17:47:08 --> Helper loaded: form_helper
+INFO - 2018-10-02 17:47:08 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 17:47:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 17:47:08 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 17:47:08 --> Controller Class Initialized
+INFO - 2018-10-02 17:47:08 --> Model "products_mod" initialized
+INFO - 2018-10-02 17:47:08 --> File loaded: H:\xampp\htdocs\onlinesylhet\admin\application\views\main.php
+INFO - 2018-10-02 17:47:08 --> Final output sent to browser
+DEBUG - 2018-10-02 17:47:08 --> Total execution time: 0.7298
+INFO - 2018-10-02 17:47:10 --> Config Class Initialized
+INFO - 2018-10-02 17:47:10 --> Hooks Class Initialized
+DEBUG - 2018-10-02 17:47:10 --> UTF-8 Support Enabled
+INFO - 2018-10-02 17:47:10 --> Utf8 Class Initialized
+INFO - 2018-10-02 17:47:10 --> URI Class Initialized
+INFO - 2018-10-02 17:47:10 --> Router Class Initialized
+INFO - 2018-10-02 17:47:10 --> Output Class Initialized
+INFO - 2018-10-02 17:47:10 --> Security Class Initialized
+DEBUG - 2018-10-02 17:47:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-10-02 17:47:10 --> Input Class Initialized
+INFO - 2018-10-02 17:47:10 --> Language Class Initialized
+INFO - 2018-10-02 17:47:10 --> Loader Class Initialized
+INFO - 2018-10-02 17:47:10 --> Helper loaded: url_helper
+INFO - 2018-10-02 17:47:10 --> Helper loaded: common_helper
+INFO - 2018-10-02 17:47:10 --> Database Driver Class Initialized
+INFO - 2018-10-02 17:47:10 --> Helper loaded: form_helper
+INFO - 2018-10-02 17:47:10 --> Form Validation Class Initialized
+DEBUG - 2018-10-02 17:47:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2018-10-02 17:47:11 --> Session: Class initialized using 'files' driver.
+INFO - 2018-10-02 17:47:11 --> Controller Class Initialized
+INFO - 2018-10-02 17:47:11 --> Model "products_mod" initialized
+INFO - 2018-10-02 17:47:11 --> File loaded: H:\xampp\htdocs\onlinesylhet\admin\application\views\main.php
+INFO - 2018-10-02 17:47:11 --> Final output sent to browser
+DEBUG - 2018-10-02 17:47:11 --> Total execution time: 0.9545
+ERROR - 2018-10-02 17:56:16 --> Severity: Warning --> Creating default object from empty value H:\xampp\htdocs\onlinesylhet\admin\application\views\products\product_form.php 17
+ERROR - 2018-10-02 18:03:00 --> Severity: error --> Exception: Call to undefined function now() H:\xampp\htdocs\onlinesylhet\admin\application\models\products_mod.php 82
+ERROR - 2018-10-02 18:03:15 --> Severity: Warning --> date() expects at least 1 parameter, 0 given H:\xampp\htdocs\onlinesylhet\admin\application\models\products_mod.php 82
+ERROR - 2018-10-02 18:03:22 --> Severity: Warning --> Invalid argument supplied for foreach() H:\xampp\htdocs\onlinesylhet\admin\application\views\products\product_form.php 17
+ERROR - 2018-10-02 18:03:27 --> Severity: Warning --> Invalid argument supplied for foreach() H:\xampp\htdocs\onlinesylhet\admin\application\views\products\product_form.php 17
+ERROR - 2018-10-02 18:23:25 --> Severity: Warning --> date() expects at least 1 parameter, 0 given H:\xampp\htdocs\onlinesylhet\admin\application\models\products_mod.php 82
