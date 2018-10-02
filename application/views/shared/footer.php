@@ -37,16 +37,13 @@
                     <ul class="list-links">
                         <li><a href="#">My Account</a></li>
                         <li><a href="#">My Wishlist</a></li>
-                        <li><a href="#">Compare</a></li>
-                        <li><a href="#">Checkout</a></li>
+                        <li><a href="<?= site_url('carts/checkout') ?>" title="Checkout">Checkout</a></li>
                         <li><a href="#">Login</a></li>
                     </ul>
                 </div>
             </div>
             <!-- /footer widget -->
-
             <div class="clearfix visible-sm visible-xs"></div>
-
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
@@ -88,9 +85,7 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <!-- footer copyright -->
                 <div class="footer-copyright">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy; <?= Date('Y') ?> All rights reserved by OnlineSylhet.com
                 </div>
                 <!-- /footer copyright -->
             </div>

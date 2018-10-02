@@ -275,7 +275,11 @@
                             <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                         </div>
                         <div class="product-body">
-                            <h3 class="product-price">&#2547; <?= $product['product_price'] ?> <?= $product['product_price_unit'] ?></h3>
+                            <h3 class="product-price">&#2547; <?= $product['product_price'] ?> <?= $product['product_price_unit'] ?>
+                                <?php if ($product['product_discount'] > 0): ?>
+                                    <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
+                                <?php endif; ?>
+                            </h3>
                             <div class="product-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>

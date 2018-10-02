@@ -29,7 +29,7 @@ class products_mod extends CI_Model {
         if ($limit) {
             $limit_sql = ' limit ' . $start . ',' . $perPage;
         }
-        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit FROM products WHERE product_status = ? $limit_sql";
+        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit,product_discount,product_regular_price FROM products WHERE product_status = ? $limit_sql";
         $query = $this->db->query($sql, array(1));
         return $query->result_array();
     }

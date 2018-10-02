@@ -58,14 +58,6 @@
                         </ul>
                     </li>
                     <li><a href="<?= site_url('contact') ?>">Contact Us</a></li>
-                    <li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Pages <i class="fa fa-caret-down"></i></a>
-                        <ul class="custom-menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="<?= site_url('products') ?>">Products</a></li>
-                            <li><a href="<?= site_url('products/details') ?>">Product Details</a></li>
-                            <li><a href="<?= site_url('carts') ?>">Checkout</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
             <!-- menu nav -->

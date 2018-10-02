@@ -189,15 +189,19 @@
                             <div class="col-md-4 col-sm-6 col-xs-6">
                                 <div class="product product-single">
                                     <div class="product-thumb">
-                                        <div class="product-label">
-                                            <span>New</span>
-                                            <span class="sale">-20%</span>
-                                        </div>
-                                        <!--<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>-->
+                                        <?php if ($product['product_discount'] > 0): ?>
+                                            <div class="product-label">
+                                                <span class="sale">-<?= $product['product_discount'] ?>%</span>
+                                            </div>
+                                        <?php endif; ?>
                                         <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                     </div>
                                     <div class="product-body">
-                                        <h4 class="product-price">&#2547;<?= $product['product_price'] ?> <?= $product['product_price_unit'] ?> <del class="product-old-price">$45.00</del></h4>
+                                        <h4 class="product-price">&#2547;<?= $product['product_price'] ?> <?= $product['product_price_unit'] ?> 
+                                            <?php if ($product['product_discount'] > 0): ?>
+                                                <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
+                                            <?php endif; ?>
+                                        </h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
