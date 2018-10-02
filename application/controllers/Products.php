@@ -54,6 +54,9 @@ class Products extends CI_Controller {
         $data['dir'] = 'products';
         $data['page'] = 'details';
         $data['page_title'] = 'Products | ' . $data['product_name'];
+        
+        
+        $data['quantity'] = 1;
         $data['product_reviews'] = $this->products_mod->getProductReview($data['product_id'], 0, 3);
         $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => $data['category_name'], 'url' => site_url('products/category/' . $data['category_id'] . '/' . Common::encodeMyURL($data['category_name']))), array('title' => $data['product_name'], 'url' => ''));
         $this->load->view('main', $data);

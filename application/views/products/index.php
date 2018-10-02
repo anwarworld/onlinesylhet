@@ -182,7 +182,6 @@
                                             <span class="sale">-<?= $product['product_discount'] ?>%</span>
                                         </div>
                                     <?php endif; ?>
-                                        <!--<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>-->
                                         <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                     </div>
                                     <div class="product-body">

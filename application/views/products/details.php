@@ -37,12 +37,17 @@
                 </div>
                 <div class="col-md-6">
                     <div class="product-body">
-                        <div class="product-label">
-                            <span>New</span>
-                            <span class="sale">-20%</span>
-                        </div>
+                        <?php if ($product_discount > 0): ?>
+                            <div class="product-label">
+                                <span class="sale">-<?= $product_discount ?>%</span>
+                            </div>
+                        <?php endif; ?>
                         <h2 class="product-name"><?= $product_name ?></h2>
-                        <h3 class="product-price">&#2547;<?= $product_price ?> <?= $product_price_unit ?> <del class="product-old-price">$45.00</del></h3>
+                        <h3 class="product-price">&#2547;<?= $product_price ?> <?= $product_price_unit ?> 
+                            <?php if ($product_discount > 0): ?>
+                                <del class="product-old-price">&#2547; <?= $product_regular_price ?></del>
+                            <?php endif; ?>
+                        </h3>
                         <div>
                             <div class="product-rating">
                                 <i class="fa fa-star"></i>
@@ -59,9 +64,10 @@
                         <div class="product-btns">
                             <div class="qty-input">
                                 <span class="text-uppercase">QTY: </span>
-                                <input class="input" type="number">
+                                <?php if($carts_info['rows'][$product_id])?>
+                                <input class="input quantity-value-change" rel="<?= $quantity ?>" title="<?= $product_id ?>"type="number" value="<?= $quantity ?>" />
                             </div>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="primary-btn add-to-cart" rel="<?= $product_image ?>" value="<?= $product_id ?>" title="<?= $product_name ?>" type="<?= $product_price ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                             <div class="pull-right">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
