@@ -67,7 +67,7 @@
                                 <?php if($carts_info['rows'][$product_id])?>
                                 <input class="input quantity-value-change" rel="<?= $quantity ?>" title="<?= $product_id ?>"type="number" value="<?= $quantity ?>" />
                             </div>
-                            <button class="primary-btn add-to-cart" rel="<?= $product_image ?>" value="<?= $product_id ?>" title="<?= $product_name ?>" type="<?= $product_price ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="primary-btn add-to-cart" rel="<?= $product_image ?>" value="<?= $product_id ?>" title="<?= $product_name ?>" data-rprice="<?= $product_regular_price ?>" data-price="<?= $product_price ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                             <div class="pull-right">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>

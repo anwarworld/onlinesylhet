@@ -6,16 +6,16 @@
             <div class="pull-left">
                 <!-- Logo -->
                 <div class="header-logo">
-                    <a class="logo" href="#">
-                        <img src="./img/logo.png" alt="">
+                    <a class="logo" href="<?= site_url('home') ?>" title="onlinesylhet.com">
+                        <img src="images/online-sylhet-logo.jpg" alt="onlinesylhet.com" />
                     </a>
                 </div>
                 <!-- /Logo -->
                 <!-- Search -->
                 <div class="header-search">
-                    <form>
-                        <input class="input search-input" type="text" placeholder="Enter your keyword">
-                        <select class="input search-categories">
+                    <form action="<?= site_url('products/search') ?>" method="post">
+                        <input name="search_key" class="input search-input" type="text" placeholder="Enter your keyword">
+                        <select name="category_id" class="input search-categories">
                             <option value="0">All Categories</option>
                             <?php foreach ($parentCategories as $category): ?>
                                 <option value="<?= $category['category_id'] ?>"><?= $category['category_name'] ?></option>

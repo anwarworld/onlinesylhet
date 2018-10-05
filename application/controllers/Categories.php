@@ -16,20 +16,4 @@ class Categories extends CI_Controller {
         $data['shop_script'] = true;
         $this->load->view('main', $data);
     }
-
-    public function details($category_id = '') {
-        if ($category_id == '') {
-            Common::redirect();
-        }
-        $data = $this->categories_mod->getCategoryDetails($category_id);
-        if ($data['category_id'] == '') {
-            Common::redirect();
-        }
-        $data['dir'] = 'categories';
-        $data['page'] = 'details';
-        $data['page_title'] = 'Categories | ' . $data['category_name'];
-        $data['shop_script'] = true;
-        $this->load->view('main', $data);
-    }
-
 }

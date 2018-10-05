@@ -96,6 +96,17 @@ class Common {
         }
     }
 
+   public static function getWebSettings() {
+        $CI = & get_instance();
+        $query = $CI->db->query("select * from settings");
+        $rows = $query->result_array();
+        $data = array();
+        foreach ($rows as $row) {
+            $data[$row['setting_key']] = $row['setting_value'];
+        }
+        return $data;
+    }
+
     public static function generateUUID() {
         return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
                 // 32 bits for "time_low"

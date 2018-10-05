@@ -122,4 +122,20 @@ class Pages extends CI_Controller {
         $this->load->view('main', $data);
     }
 
+    public function settings() {
+        if (filter_input(INPUT_POST, 'save')) {
+            if ($this->pages_mod->saveSettings()) {
+                $this->session->set_flashdata('msg', 'Page updated successfully!');
+                redirect('pages/settings');
+            }
+        }
+        $data = $this->pages_mod->getSettings();
+        $data['dir'] = 'pages';
+        $data['page'] = 'setting_form';
+        $data['page_title'] = 'Settings';
+        $data['form_action'] = site_url('pages/settings');
+        $data['nav_path'] = array(array('title' => 'Pages', 'url' => site_url('pages')), array('title' => 'Settings', 'url' => ''));
+        $this->load->view('main', $data);
+    }
+
 }

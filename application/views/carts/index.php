@@ -30,7 +30,11 @@
                                         <td class="details">
                                             <a href="<?= site_url('products/details/' . $cart['product_id'] . '/' . Common::encodeMyURL($cart['product_name'])) ?>"><?= $cart['product_name'] ?></a>
                                         </td>
-                                        <td class="price text-center"><strong>&#2547; <?= $cart['product_price'] ?></strong><br><del class="font-weak"><small>$40.00</small></del></td>
+                                        <td class="price text-center"><strong>&#2547; <?= $cart['product_price'] ?></strong>
+                                            <?php if ($cart['product_regular_price'] > $cart['product_price']): ?>
+                                                <br><del class="font-weak"><small>&#2547; <?= $cart['product_regular_price'] ?></small></del>
+                                            <?php endif; ?>
+                                        </td>
                                         <td class="qty text-center"><input class="input quantity-value-change" rel="<?= $cart['quantity'] ?>" title="<?= $cart['product_id'] ?>" type="number" value="<?= $cart['quantity'] ?>"></td>
                                         <td class="total text-center product-total-<?= $cart['product_id'] ?>"><strong class="primary-color">&#2547; <?= $cart['product_price'] * $cart['quantity'] ?></strong></td>
                                         <td class="text-right"><button class="main-btn icon-btn remove-from-cart" value="<?= $cart['product_id'] ?>" title="<?= $cart['product_name'] ?>"><i class="fa fa-close"></i></button></td>

@@ -18,6 +18,7 @@ class Carts extends CI_Controller {
     }
 
     public function index() {
+
         $data['dir'] = 'carts';
         $data['page'] = 'index';
         $data['page_title'] = 'Cart';
@@ -40,6 +41,7 @@ class Carts extends CI_Controller {
         $data['product_name'] = filter_input(INPUT_POST, 'product_name');
         $data['product_image'] = filter_input(INPUT_POST, 'product_image');
         $data['product_price'] = filter_input(INPUT_POST, 'product_price');
+        $data['product_regular_price'] = filter_input(INPUT_POST, 'product_regular_price');
         $postquantity = filter_input(INPUT_POST, 'quantity');
         $carts_data = $this->session->userdata('carts_data');
         if ($data['product_id'] != '' && $carts_data[$data['product_id']] != '') {

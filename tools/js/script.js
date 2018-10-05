@@ -47,9 +47,11 @@ var carts = {
         var quantity = 1;
         var product_name = $j(obj).attr('title');
         var product_image = $j(obj).attr('rel');
-        var price = parseFloat($j(obj).attr('type'));
+        var price = parseFloat($j(obj).data('price'));
         var tPrice = parseFloat($j('#cart-amount').attr('rel'));
         var totalPrice = price + tPrice;
+        var rPrice = $j(obj).data('rprice');
+
         $j.ajax({
             type: 'post',
             url: base_url + '/carts/addToCart',
@@ -58,7 +60,8 @@ var carts = {
                 quantity: quantity,
                 product_name: product_name,
                 product_image: product_image,
-                product_price: price
+                product_price: price,
+                product_regular_price: rPrice
             },
             dataType: 'json',
             success: function(jsonData) {

@@ -54,15 +54,15 @@ class Products extends CI_Controller {
         $data['dir'] = 'products';
         $data['page'] = 'details';
         $data['page_title'] = 'Products | ' . $data['product_name'];
-        
-        
+
+
         $data['quantity'] = 1;
         $data['product_reviews'] = $this->products_mod->getProductReview($data['product_id'], 0, 3);
         $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => $data['category_name'], 'url' => site_url('products/category/' . $data['category_id'] . '/' . Common::encodeMyURL($data['category_name']))), array('title' => $data['product_name'], 'url' => ''));
         $this->load->view('main', $data);
     }
 
-    public function category($category_id = '') {
+    public function category($category_id = '', $category_name = '') {
         if ($category_id == '') {
             Common::redirect();
         }
@@ -72,10 +72,43 @@ class Products extends CI_Controller {
             Common::redirect();
         }
 
-        $data['product_list'] = $this->products_mod->getCategoryProducts($category_id);
+        //       Pagination start
+        $this->load->library("pagination");
+        $start = $this->uri->segment(5);
+        if ($start == '') {
+            $start = 0;
+        }
+        $total_rows = $this->products_mod->getTotalProduct();
+        $config['uri_segment'] = 5;
+        $config['base_url'] = site_url('products/category/' . $category_id . '/' . $category_name . '/');
+        $config['total_rows'] = $total_rows;
+        $config['per_page'] = 20;
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active">';
+        $config['cur_tag_close'] = '</li>';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['next_link'] = "Next &raquo;";
+        $config['prev_link'] = "&laquo; Previous";
+        $this->pagination->initialize($config);
+        $data['pagination_links'] = $this->pagination->create_links();
+        $data['product_list'] = $this->products_mod->getCategoryProducts($category_id, $start, $config['per_page']);
+//       Pagination End
         $data['dir'] = 'products';
         $data['page'] = 'category';
-        $data['page_title'] = 'Products | ' . $data['category_name'];
+        $data['page_title'] = 'Products &raquo; ' . $data['category_name'];
+        $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => $data['category_name'], 'url' => ''));
+        $this->load->view('main', $data);
+    }
+
+    public function search() {
+        $data['product_list'] = $this->products_mod->getAllProducts(false, 0, 10);
+        $data['dir'] = 'products';
+        $data['page'] = 'search';
+        $data['page_title'] = 'Search Products';
         $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => $data['category_name'], 'url' => ''));
         $this->load->view('main', $data);
     }

@@ -5,11 +5,10 @@
         <!-- row -->
         <div class="row">
             <!-- ASIDE -->
-            <div id="aside" class="col-md-3">
-                <?php include_once 'side_bar.php';?>
+            <div id="aside" class="col-md-3"> 
+                <?php include_once 'side_bar.php'; ?>
             </div>
             <!-- /ASIDE -->
-
             <!-- MAIN -->
             <div id="main" class="col-md-9">
                 <!-- store top filter -->

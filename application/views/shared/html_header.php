@@ -3,9 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<title><?= $page_title ?></title>
+<?php
+$webSettings = Common::getWebSettings();
+?>
+<meta name="description" content="<?= $webSettings['meta_contents'] ?>">
+<meta name="keywords" content="<?= $webSettings['meta_keywords'] ?>">
+<meta name="author" content="Anwar Hossain">
+<title><?= $page_title . ' | ' . $webSettings['site_title'] ?></title>
 <base href="<?= base_url() ?>" />
-
+<link rel="icon" href="images/fevicon.png" type="image/x-icon"/>
+<link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon"/>
 <!-- Google font -->
 <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 

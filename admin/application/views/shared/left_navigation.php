@@ -92,6 +92,7 @@
                 </span>
             </a>
             <ul class="treeview-menu">
+                <li class="<?= $page == 'setting_form' ? 'active' : '' ?>"><a href="<?= site_url('pages/settings') ?>"><i class="fa fa-circle-o"></i>Web Settings</a></li>
                 <li class="<?= $dir == 'sliders' ? 'active' : '' ?>"><a href="<?= site_url('sliders') ?>"><i class="fa fa-circle-o"></i>Home Sliders</a></li>
                 <li class="<?= $dir == 'pages' ? 'active' : '' ?>"><a href="<?= site_url('pages') ?>"><i class="fa fa-circle-o"></i>Web Pages</a></li>
             </ul>

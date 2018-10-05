@@ -12,7 +12,7 @@ class Home extends CI_Controller {
     public function index() {
         $data['dir'] = 'home';
         $data['page'] = 'index';
-        $data['page_title'] = 'Home | Welcome to kintayniba.com';
+        $data['page_title'] = 'Home';
         $data['sliders'] = $this->home_mod->getSliders();
         $data['latest_producs'] = Common::getProductsByType(4);
         $data['featured_producs'] = Common::getProductsByType(2);

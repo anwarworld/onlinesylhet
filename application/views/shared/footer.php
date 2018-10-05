@@ -9,21 +9,17 @@
                 <div class="footer">
                     <!-- footer logo -->
                     <div class="footer-logo">
-                        <a class="logo" href="#">
-                            <img src="./img/logo.png" alt="">
+                        <a class="logo" href="<?= site_url('home') ?>" title="onlinesylhet.com">
+                            <img src="images/online-sylhet-logo.jpg" alt="onlinesylhet.com" />
                         </a>
                     </div>
                     <!-- /footer logo -->
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                    <p><?= nl2br($webSettings['site_slogan']) ?></p>
 
                     <!-- footer social -->
                     <ul class="footer-social">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                     </ul>
                     <!-- /footer social -->
                 </div>
@@ -67,7 +63,7 @@
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
                     <h3 class="footer-header">Stay Connected</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                    <p><?= nl2br($webSettings['newsletter']) ?></p>
                     <form>
                         <div class="form-group">
                             <input class="input" placeholder="Enter Email Address">

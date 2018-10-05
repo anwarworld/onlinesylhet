@@ -40,8 +40,8 @@ class products_mod extends CI_Model {
         return $query->row_array();
     }
 
-    function getCategoryProducts($category_id) {
-        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit FROM products WHERE product_status = ? AND category_id=?";
+    function getCategoryProducts($category_id, $start, $perPage) {
+        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit FROM products WHERE product_status = ? AND category_id=? limit " . $start . ',' . $perPage;
         $query = $this->db->query($sql, array(1, $category_id));
         return $query->result_array();
     }

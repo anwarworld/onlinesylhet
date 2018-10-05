@@ -44,13 +44,11 @@
                         </div>
                         <div class="">
                             <label>Email</label>
-                            <p>anwarworld@gmail.com</p>
+                            <p><?= $webSettings['contact_email'] ?></p>
                             <label>Phone </label>
-                            <p>01717******</p>
+                            <p><?= $webSettings['contact_phone'] ?></p>
                             <label class="title">Address</label>
-                            <p>
-                                here address
-                            </p>
+                            <p><?= nl2br($webSettings['contact_address']) ?></p>
                         </div>
                     </div>
                 </div>
