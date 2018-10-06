@@ -35,13 +35,20 @@ $pickForYou = Common::getPickedForYou();
                                 <?php endif; ?>
                             </h4>
                             <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
+                                <?php
+                                if ($product['product_number_rating'] > 0) :
+                                    $rating = $product['product_total_rating'] / $product['product_number_rating'];
+                                    for ($i = 0; $i < 5; $i++):
+                                        if ($i < $rating) {
+                                            echo '<i class="fa fa-star"></i>';
+                                        } else {
+                                            echo '<i class="fa fa-star-o empty"></i>';
+                                        }
+                                    endfor;
+                                endif;
+                                ?>
                             </div>
-                            <h2 class="product-name"><a href="#"><?= $product['product_name'] ?></a></h2>
+                            <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                             <div class="product-btns">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>

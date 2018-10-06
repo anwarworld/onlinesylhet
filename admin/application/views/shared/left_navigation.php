@@ -82,6 +82,7 @@
                 <li class="<?= $dir == 'brands' ? 'active' : '' ?>"><a href="<?= site_url('brands') ?>"><i class="fa fa-circle-o"></i>Brands</a></li>
                 <li class="<?= $dir == 'units' ? 'active' : '' ?>"><a href="<?= site_url('units') ?>"><i class="fa fa-circle-o"></i>Units</a></li>
                 <li class="<?= $dir == 'categories' ? 'active' : '' ?>"><a href="<?= site_url('categories') ?>"><i class="fa fa-circle-o"></i>Category</a></li>
+                <li class="<?= $dir == 'payments' ? 'active' : '' ?>"><a href="<?= site_url('payments') ?>"><i class="fa fa-circle-o"></i>Payments Method</a></li>
             </ul>
         </li>
         <li class="treeview <?= $dir == 'sliders' ? 'active' : $dir == 'pages' ? 'active' : '' ?>">

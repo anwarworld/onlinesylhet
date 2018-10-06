@@ -50,13 +50,20 @@
                         </h3>
                         <div>
                             <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
+                                <?php
+                                if ($product_number_rating > 0) :
+                                    $rating = $product_total_rating / $product_number_rating;
+                                    for ($i = 0; $i < 5; $i++):
+                                        if ($i < $rating) {
+                                            echo '<i class="fa fa-star"></i>';
+                                        } else {
+                                            echo '<i class="fa fa-star-o empty"></i>';
+                                        }
+                                    endfor;
+                                endif;
+                                ?>
                             </div>
-                            <a href="#">3 Review(s) / Add Review</a>
+                            <a href="#review-form-submit"><?= $product_number_rating ?> Review(s) / Add Review</a>
                         </div>
                         <p><strong>Availability:</strong> In Stock</p>
                         <p><strong>Brand:</strong> <?= $brand_name ?></p>
@@ -64,7 +71,7 @@
                         <div class="product-btns">
                             <div class="qty-input">
                                 <span class="text-uppercase">QTY: </span>
-                                <?php if($carts_info['rows'][$product_id])?>
+                                <?php if ($carts_info['rows'][$product_id])  ?>
                                 <input class="input quantity-value-change" rel="<?= $quantity ?>" title="<?= $product_id ?>"type="number" value="<?= $quantity ?>" />
                             </div>
                             <button class="primary-btn add-to-cart" rel="<?= $product_image ?>" value="<?= $product_id ?>" title="<?= $product_name ?>" data-rprice="<?= $product_regular_price ?>" data-price="<?= $product_price ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
@@ -80,7 +87,7 @@
                     <div class="product-tab">
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-                            <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Reviews (<?= $product_number_rating ?>)</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="tab1" class="tab-pane fade in active">
@@ -99,11 +106,12 @@
                                                         <div><i class="fa fa-clock-o"></i> <?= $review['review_date'] ?></div>
                                                         <div class="review-rating pull-right">
                                                             <?php
-                                                            for ($inc = 0; $inc < $review['review_rating']; $inc++):
-                                                                echo '<i class="fa fa-star"></i>';
-                                                            endfor;
-                                                            for ($inc = 0; $inc < 5 - $review['review_rating']; $inc++):
-                                                                echo ' <i class="fa fa-star-o empty"></i>';
+                                                            for ($inc = 0; $inc < 5; $inc++):
+                                                                if ($inc < $review['review_rating']) {
+                                                                    echo '<i class="fa fa-star"></i>';
+                                                                } else {
+                                                                    echo ' <i class="fa fa-star-o empty"></i>';
+                                                                }
                                                             endfor;
                                                             ?>
                                                         </div>

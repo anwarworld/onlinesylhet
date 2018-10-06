@@ -29,7 +29,7 @@ class products_mod extends CI_Model {
         if ($limit) {
             $limit_sql = ' limit ' . $start . ',' . $perPage;
         }
-        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit,product_discount,product_regular_price FROM products WHERE product_status = ? $limit_sql";
+        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit,product_discount,product_regular_price,product_total_rating,product_number_rating FROM products WHERE product_status = ? $limit_sql";
         $query = $this->db->query($sql, array(1));
         return $query->result_array();
     }
@@ -41,12 +41,36 @@ class products_mod extends CI_Model {
     }
 
     function getCategoryProducts($category_id, $start, $perPage) {
-        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit FROM products WHERE product_status = ? AND category_id=? limit " . $start . ',' . $perPage;
+        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit,product_discount,product_regular_price,product_total_rating,product_number_rating FROM products WHERE product_status = ? AND category_id=? limit " . $start . ',' . $perPage;
         $query = $this->db->query($sql, array(1, $category_id));
         return $query->result_array();
     }
 
+    function getTotalProductsByCategory($category_id) {
+        $sql = "SELECT count(product_id) as totalRows FROM products WHERE product_status = ? AND category_id=?";
+        $query = $this->db->query($sql, array(1, $category_id));
+        $data = $query->row_array();
+        return $data['totalRows'];
+    }
+
+    function getTotalProductsBySales() {
+        $sql = "SELECT count(product_id) as totalRows FROM products WHERE product_status = 1 AND product_discount > 0";
+        $query = $this->db->query($sql);
+        $data = $query->row_array();
+        return $data['totalRows'];
+    }
+
+    function getProductsBySales($start, $perPage) {
+        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit,product_discount,product_regular_price,product_total_rating,product_number_rating FROM products WHERE product_status = 1 AND product_discount > 0 limit " . $start . ',' . $perPage;
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     function saveReview($data) {
+        if ($data['review_rating'] > 0) {
+            $sql = "UPDATE products set product_total_rating=product_total_rating+" . $data['review_rating'] . ', product_number_rating=product_number_rating+1 WHERE product_id=' . $data['product_id'];
+            $this->db->query($sql);
+        }
         return $this->db->insert('product_reviews', $data);
     }
 

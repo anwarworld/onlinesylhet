@@ -55,6 +55,11 @@ $config = array(
         array('field' => 'slider_slogan', 'label' => 'Slider Title', 'rules' => ''),
         array('field' => 'slider_url', 'label' => 'Slider URL', 'rules' => ''),
     ),
+    'valid_payment_method' => array(
+        array('field' => 'method_name', 'label' => 'Method Name', 'rules' => 'required'),
+        array('field' => 'method_des', 'label' => 'Method Details', 'rules' => ''),
+        array('field' => 'method_status', 'label' => 'Method Status', 'rules' => ''),
+    ),
     ///
     'valid_sale' => array(
         array('field' => 'customer_name', 'label' => 'Customer Name', 'rules' => 'required|callback_check_customer_due'),

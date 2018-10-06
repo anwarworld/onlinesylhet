@@ -44,7 +44,7 @@
                 <ul class="menu-list">
                     <li><a href="<?= site_url('home') ?>">Home</a></li>
                     <li><a href="<?= site_url('products') ?>">Products</a></li>
-                    <li><a href="#">Sales</a></li>
+                    <li><a href="<?= site_url('products/sales') ?>">Sales</a></li>
                     <li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Services <i class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <?php

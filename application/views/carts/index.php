@@ -52,11 +52,11 @@
                                 <th>SUBTOTAL</th>
                                 <th colspan="2" class="sub-total">&#2547; <?= $carts_info['cart_total_amount'] ?></th>
                             </tr>
-                            <tr>
+<!--                            <tr>
                                 <th class="empty" colspan="3"></th>
                                 <th>SHIPING</th>
                                 <td colspan="2">Free Shipping</td>
-                            </tr>
+                            </tr>-->
                             <tr>
                                 <th class="empty" colspan="3"></th>
                                 <th>TOTAL</th>
