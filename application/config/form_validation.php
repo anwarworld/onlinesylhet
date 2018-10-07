@@ -24,6 +24,10 @@ $config = array(
         array('field' => 'review_email', 'label' => 'Email', 'rules' => 'required'),
         array('field' => 'review_details', 'label' => 'Review', 'rules' => 'required'),
         array('field' => 'review_rating', 'label' => 'Rating', 'rules' => 'required')
-    )
+    ),
+    'valid_signin' => array(
+        array('field' => 'mobile_email', 'label' => 'Mobile/Email', 'rules' => 'required'),
+        array('field' => 'password', 'label' => 'Password', 'rules' => 'required')
+    ),
 );
 ?>

@@ -29,21 +29,72 @@
             <div class="pull-right">
                 <ul class="header-btns">
                     <!-- Account -->
-                    <li class="header-account dropdown default-dropdown">
-                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-                            <div class="header-btns-icon">
-                                <i class="fa fa-user-o"></i>
+                    <li class="header-account">
+                        <div class="dropdown default-dropdown">
+                            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                                <div class="header-btns-icon">
+                                    <i class="fa fa-user-o"></i>
+                                </div>
+                                <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
                             </div>
-                            <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
+                            <?php if (Common::isLoggedIn()): ?>
+                                <ul class="custom-menu">
+                                    <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                                    <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
+                                    <li><a href="<?= site_url('carts/checkout') ?>" title="Checkout"><i class="fa fa-check"></i> Checkout</a></li>
+                                    <li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
+                                    <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+                                </ul> 
+                            <?php endif; ?>
                         </div>
-                        <a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
-                        <ul class="custom-menu">
-                            <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-                            <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
-                            <li><a href="<?= site_url('carts/checkout') ?>" title="Checkout"><i class="fa fa-check"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-                            <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
-                        </ul>
+                        <?php
+                        if (Common::isLoggedIn()):
+                            echo '<a class="text-uppercase" href="'.  site_url('users/signout').'" title="User Signout">Signout</a>';
+                        else:
+                            ?>
+                            <div class="dropdown default-dropdown"  style="float:left;">
+                                <a href="#" class="text-uppercase dropdown" data-toggle="dropdown" aria-expanded="true">Login</a>
+                                <div class="custom-menu" style="width:250px">
+                                    <form id="user-signin">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="mobile_email" placeholder="Please Enter Mobile/Email"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="password" placeholder="Please Enter Password"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="dropdown default-dropdown" style="float:left;">
+                                &nbsp;/&nbsp;<a class="text-uppercase dropdown" data-toggle="dropdown" aria-expanded="true">Join</a>
+                                <div class="custom-menu" style="width:250px">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Please Enter Full Name"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Please Enter Mobile"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Please Enter Email"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Please Enter Password"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Please Confirm Password"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary">Sign up</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <br style="clear:both" />
+                        <?php endif; ?>
                     </li>
                     <!-- /Account -->
 

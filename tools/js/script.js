@@ -1,7 +1,57 @@
 $j(document).ready(function() {
     carts.init();
     productReview.init();
+    users.init();
 });
+var users = {
+    init: function() {
+        $j('#user-signin').submit(function(event) {
+            users.signin();
+            return false;
+        });
+        $j('#user-signup').submit(function(event) {
+            users.signup();
+            return false;
+        });
+    },
+    signup: function() {
+        $j.ajax({
+            type: 'post',
+            url: base_url + '/users/signup',
+            data: $j('form#user-signup').serialize(),
+            dataType: 'json',
+            success: function(jsonData) {
+                if (jsonData.success === false) {
+                    $j('.form-control').addClass('alert-danger');
+                } else {
+                    window.location.href = jsonData.redirect_url;
+                }
+            },
+            error: function(a, b, c) {
+                alert("signin Error: " + a + ' ' + b + ' ' + c);
+            }
+        });
+    },
+    signin: function() {
+        $j.ajax({
+            type: 'post',
+            url: base_url + '/users/signin',
+            data: $j('form#user-signin').serialize(),
+            dataType: 'json',
+            success: function(jsonData) {
+                alert(jsonData.redirect_url);
+                if (jsonData.success === false) {
+                    $j('.form-control').addClass('alert-danger');
+                } else {
+                    window.location.href = jsonData.redirect_url;
+                }
+            },
+            error: function(a, b, c) {
+                alert("signin Error: " + a + ' ' + b + ' ' + c);
+            }
+        });
+    }
+}
 var productReview = {
     init: function() {
         $j('#review-form-submit').submit(function(event) {
@@ -127,7 +177,6 @@ var carts = {
                 }
             });
         }
-
     }
 }
 

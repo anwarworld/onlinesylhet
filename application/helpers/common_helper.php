@@ -96,7 +96,7 @@ class Common {
         }
     }
 
-   public static function getWebSettings() {
+    public static function getWebSettings() {
         $CI = & get_instance();
         $query = $CI->db->query("select * from settings");
         $rows = $query->result_array();
@@ -123,6 +123,15 @@ class Common {
                 // 48 bits for "node"
                 mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
         );
+    }
+
+    public static function isLoggedIn() {
+        $CI = & get_instance();
+        if ($CI->session->userdata('user_logged_in')) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
