@@ -134,4 +134,17 @@ class Common {
         }
     }
 
+    public static function getSessionUserData() {
+        $CI = & get_instance();
+        $data = array();
+        if ($CI->session->userdata('user_logged_in')) {
+            $data['user_id'] = $CI->session->userdata('user_id');
+            $data['user_full_name'] = $CI->session->userdata('user_full_name');
+            $data['user_email'] = $CI->session->userdata('user_email');
+            $data['user_phone'] = $CI->session->userdata('user_phone');
+        }
+
+        return $data;
+    }
+
 }

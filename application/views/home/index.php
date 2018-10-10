@@ -37,7 +37,7 @@
             <!-- banner -->
             <div class="col-md-4 col-sm-6">
                 <a class="banner banner-1" href="#">
-                    <img src="./img/banner10.jpg" alt="">
+                    <img src="images/banner10.jpg" alt="">
                     <div class="banner-caption text-center">
                         <h2 class="white-color">NEW COLLECTION</h2>
                     </div>
@@ -48,7 +48,7 @@
             <!-- banner -->
             <div class="col-md-4 col-sm-6">
                 <a class="banner banner-1" href="#">
-                    <img src="./img/banner11.jpg" alt="">
+                    <img src="images/banner11.jpg" alt="">
                     <div class="banner-caption text-center">
                         <h2 class="white-color">NEW COLLECTION</h2>
                     </div>
@@ -59,7 +59,7 @@
             <!-- banner -->
             <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
                 <a class="banner banner-1" href="#">
-                    <img src="./img/banner12.jpg" alt="">
+                    <img src="images/banner12.jpg" alt="">
                     <div class="banner-caption text-center">
                         <h2 class="white-color">NEW COLLECTION</h2>
                     </div>
@@ -94,7 +94,7 @@
             <!-- banner -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="banner banner-2">
-                    <img src="./img/banner14.jpg" alt="">
+                    <img src="images/banner14.jpg" alt="">
                     <div class="banner-caption">
                         <h2 class="white-color">NEW<br>COLLECTION</h2>
                         <button class="primary-btn">Shop Now</button>

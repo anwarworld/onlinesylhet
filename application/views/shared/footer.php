@@ -31,7 +31,7 @@
                 <div class="footer">
                     <h3 class="footer-header">My Account</h3>
                     <ul class="list-links">
-                        <li><a href="#">My Account</a></li>
+                        <li><a href="<?= site_url('myaccounts') ?>">My Account</a></li>
                         <li><a href="#">My Wishlist</a></li>
                         <li><a href="<?= site_url('carts/checkout') ?>" title="Checkout">Checkout</a></li>
                         <li><a href="#">Login</a></li>

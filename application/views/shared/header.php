@@ -39,21 +39,22 @@
                             </div>
                             <?php if (Common::isLoggedIn()): ?>
                                 <ul class="custom-menu">
-                                    <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-                                    <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
+                                    <li><a href="<?= site_url('users') ?>"><i class="fa fa-user-o"></i> My Account</a></li>
+                                    <li><a href="<?= site_url('users/mywishlist') ?>"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
                                     <li><a href="<?= site_url('carts/checkout') ?>" title="Checkout"><i class="fa fa-check"></i> Checkout</a></li>
-                                    <li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-                                    <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+                                    <li><a href="<?=  site_url('login/signout')?>"><i class="fa fa-unlock-alt"></i> Signout</a></li>
+                                    <!--<li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>-->
                                 </ul> 
                             <?php endif; ?>
                         </div>
                         <?php
-                        if (Common::isLoggedIn()):
-                            echo '<a class="text-uppercase" href="'.  site_url('users/signout').'" title="User Signout">Signout</a>';
+                        if (Common::isLoggedIn()):?>
+                             <div><a class="text-uppercase" href="<?=site_url('login/signout') ?>" title="User Signout">Signout</a></div>
+                        <?php
                         else:
                             ?>
                             <div class="dropdown default-dropdown"  style="float:left;">
-                                <a href="#" class="text-uppercase dropdown" data-toggle="dropdown" aria-expanded="true">Login</a>
+                                <a class="text-uppercase dropdown" data-toggle="dropdown" aria-expanded="true">Login</a>
                                 <div class="custom-menu" style="width:250px">
                                     <form id="user-signin">
                                         <div class="form-group">
@@ -63,7 +64,7 @@
                                             <input type="password" class="form-control" name="password" placeholder="Please Enter Password"/>
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Login</button>
+                                            <button type="submit" class="primary-btn">Login</button>
                                         </div>
                                     </form>
                                 </div>
@@ -71,24 +72,24 @@
                             <div class="dropdown default-dropdown" style="float:left;">
                                 &nbsp;/&nbsp;<a class="text-uppercase dropdown" data-toggle="dropdown" aria-expanded="true">Join</a>
                                 <div class="custom-menu" style="width:250px">
-                                    <form>
+                                    <form id="user-signup">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Please Enter Full Name"/>
+                                            <input type="text" name="full_name" class="form-control" placeholder="Please Enter Full Name"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Please Enter Mobile"/>
+                                            <input type="text" name="mobile" class="form-control" placeholder="Please Enter Mobile"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Please Enter Email"/>
+                                            <input type="text" name="email" class="form-control" placeholder="Please Enter Email"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Please Enter Password"/>
+                                            <input type="password" name="password" class="form-control" placeholder="Please Enter Password"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Please Confirm Password"/>
+                                            <input type="password" name="confirm_password" class="form-control" placeholder="Please Confirm Password"/>
                                         </div>
                                         <div class="form-group">
-                                            <button type="button" class="btn btn-primary">Sign up</button>
+                                            <button type="submit" class="primary-btn">Sign up</button>
                                         </div>
                                     </form>
                                 </div>

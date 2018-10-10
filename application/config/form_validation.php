@@ -29,5 +29,17 @@ $config = array(
         array('field' => 'mobile_email', 'label' => 'Mobile/Email', 'rules' => 'required'),
         array('field' => 'password', 'label' => 'Password', 'rules' => 'required')
     ),
+    'valid_signup' => array(
+        array('field' => 'full_name', 'label' => 'Full Name', 'rules' => 'required'),
+        array('field' => 'email', 'label' => 'Email', 'rules' => 'required|callback_is_valid_user'),
+        array('field' => 'mobile', 'label' => 'Mobile', 'rules' => 'required|callback_is_valid_user'),
+        array('field' => 'password', 'label' => 'Password', 'rules' => 'required'),
+        array('field' => 'confirm_password', 'label' => 'Confirm Password', 'rules' => 'required|matches[password]')
+    ),
+    'valid_change_password' => array(
+        array('field' => 'old_password', 'label' => 'Old Password', 'rules' => 'required|callback_is_valid_old_password'),
+        array('field' => 'password', 'label' => 'New Password', 'rules' => 'required'),
+        array('field' => 'confirm_password', 'label' => 'Confirm Password', 'rules' => 'required|matches[password]')
+    ),
 );
 ?>

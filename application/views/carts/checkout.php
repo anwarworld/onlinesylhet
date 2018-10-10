@@ -7,7 +7,7 @@
             <form id="checkout-form" action="<?= site_url('carts/checkout') ?>" method="post" class="clearfix">
                 <div class="col-md-6">
                     <div class="billing-details">
-                        <p>Already a customer ? <a href="#">Login</a></p>
+                        <p>Already a customer ? <a href="<?= site_url('login') ?>">Login</a></p>
                         <div class="section-title">
                             <h3 class="title">Billing Details</h3>
                         </div>
@@ -31,7 +31,7 @@
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
                                     </p>
-                                        <input class="input" type="password" name="password" placeholder="Enter Your Password">
+                                    <input class="input" type="password" name="password" placeholder="Enter Your Password">
                                 </div>
                             </div>
                         </div>
@@ -65,30 +65,16 @@
                         <div class="section-title">
                             <h4 class="title">Payments Methods</h4>
                         </div>
-                        <div class="input-checkbox">
-                            <input type="radio" name="payments" id="payments-1" checked>
-                            <label for="payments-1">Direct Bank Transfer</label>
-                            <div class="caption">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                <p>
+                        <?php foreach ($payment_methods as $key => $method):
+                            ?>
+                            <div class="input-checkbox">
+                                <input type="radio" name="payments" value="<?= $method['method_id'] ?>" id="payments-<?= $method['method_id'] ?>" />
+                                <label for="payments-<?= $method['method_id'] ?>"><?= $method['method_name'] ?></label>
+                                <div class="caption">
+                                    <p><?= $method['method_des'] ?></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="input-checkbox">
-                            <input type="radio" name="payments" id="payments-2">
-                            <label for="payments-2">Cheque Payment</label>
-                            <div class="caption">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                <p>
-                            </div>
-                        </div>
-                        <div class="input-checkbox">
-                            <input type="radio" name="payments" id="payments-3">
-                            <label for="payments-3">Paypal System</label>
-                            <div class="caption">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                <p>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 

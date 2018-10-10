@@ -17,29 +17,29 @@ var users = {
     signup: function() {
         $j.ajax({
             type: 'post',
-            url: base_url + '/users/signup',
+            url: base_url + '/login/signup',
             data: $j('form#user-signup').serialize(),
             dataType: 'json',
             success: function(jsonData) {
                 if (jsonData.success === false) {
+                    alert(jsonData.msg);
                     $j('.form-control').addClass('alert-danger');
                 } else {
                     window.location.href = jsonData.redirect_url;
                 }
             },
             error: function(a, b, c) {
-                alert("signin Error: " + a + ' ' + b + ' ' + c);
+                alert("signup Error: " + a + ' ' + b + ' ' + c);
             }
         });
     },
     signin: function() {
         $j.ajax({
             type: 'post',
-            url: base_url + '/users/signin',
+            url: base_url + '/login/signin',
             data: $j('form#user-signin').serialize(),
             dataType: 'json',
             success: function(jsonData) {
-                alert(jsonData.redirect_url);
                 if (jsonData.success === false) {
                     $j('.form-control').addClass('alert-danger');
                 } else {

@@ -15,6 +15,7 @@ class Carts extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->load->model('carts_mod');
     }
 
     public function index() {
@@ -28,6 +29,7 @@ class Carts extends CI_Controller {
     }
 
     public function checkout() {
+        $data['payment_methods'] = $this->carts_mod->getPaymentMethods();
         $data['dir'] = 'carts';
         $data['page'] = 'checkout';
         $data['page_title'] = 'Cart';

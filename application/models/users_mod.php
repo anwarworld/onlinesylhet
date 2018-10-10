@@ -17,34 +17,26 @@ class users_mod extends CI_Model {
         parent::__construct();
     }
 
-    function isValidLogin() {
-        $user_name = filter_input(INPUT_POST, 'mobile_email');
-        $user_password = filter_input(INPUT_POST, 'password');
-        $user_status = 1;
-        $sql = "SELECT * FROM users WHERE (user_email = ? OR user_phone = ? ) AND user_password = ? AND user_status= ?";
-        $query = $this->db->query($sql, array($user_name, $user_name, $user_password, $user_status));
+    function isValidOldPassword() {
+        $user_id = $this->session->userdata('user_id');
+        $user_password = filter_input(INPUT_POST, 'old_password');
+        $sql = "SELECT user_id FROM users WHERE user_id = ? AND user_password = ?";
+        $query = $this->db->query($sql, array($user_id, $user_password));
         if ($query->num_rows() > 0) {
-            $this->do_login($query->row_array());
             return TRUE;
         } else {
             return FALSE;
         }
     }
 
-    function do_login($data) {
-        $this->session->set_userdata('user_id', $data['user_id']);
-        $this->session->set_userdata('user_phone', $data['user_phone']);
-        $this->session->set_userdata('user_email', $data['user_email']);
-        $this->session->set_userdata('user_full_name', $data['user_full_name']);
-        $this->session->set_userdata('user_logged_in', TRUE);
-    }
-
-    function do_logout() {
-        $this->session->unset_userdata('user_id');
-        $this->session->unset_userdata('user_phone');
-        $this->session->unset_userdata('user_email');
-        $this->session->unset_userdata('user_full_name');
-        $this->session->unset_userdata('user_logged_in');
+    function changePassword() {
+        $user_id = $this->session->userdata('user_id');
+        $user_password = filter_input(INPUT_POST, 'password');
+        $data = array(
+            'user_password' => $user_password
+        );
+        $this->db->where('user_id', $user_id);
+        return $this->db->update('users', $data);
     }
 
 }
