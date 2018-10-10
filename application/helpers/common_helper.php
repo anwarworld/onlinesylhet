@@ -142,6 +142,7 @@ class Common {
             $data['user_full_name'] = $CI->session->userdata('user_full_name');
             $data['user_email'] = $CI->session->userdata('user_email');
             $data['user_phone'] = $CI->session->userdata('user_phone');
+            $data['address'] = $CI->session->userdata('address');
         }
 
         return $data;

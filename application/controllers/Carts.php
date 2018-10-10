@@ -29,11 +29,36 @@ class Carts extends CI_Controller {
     }
 
     public function checkout() {
+        $this->load->library('form_validation');
+        if (filter_input(INPUT_POST, 'save')) {
+            if ($this->form_validation->run('valid_place_order')) {
+                $this->carts_mod->placeOrderDetails();
+                redirect('carts/placeOrder');
+            }
+        }
+        $data = Common::getSessionUserData();
         $data['payment_methods'] = $this->carts_mod->getPaymentMethods();
+        $data['delivery_methods'] = $this->carts_mod->getDeliveryMethods();
         $data['dir'] = 'carts';
         $data['page'] = 'checkout';
         $data['page_title'] = 'Cart';
         $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => 'Checkout', 'url' => ''));
+        $this->load->view('main', $data);
+    }
+
+    public function placeOrder() {
+        if (filter_input(INPUT_POST, 'save')) {
+            if ($this->form_validation->run('valid_place_order')) {
+                
+            }
+        }
+        $data = Common::getSessionUserData();
+        $data['payment_method'] = $this->carts_mod->getSessionPaymentMethods();
+        $data['delivery_method'] = $this->carts_mod->getSessionDeliveryMethods();
+        $data['dir'] = 'carts';
+        $data['page'] = 'place_order';
+        $data['page_title'] = 'Cart';
+        $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => 'Checkout', 'url' => site_url('carts/checkout')), array('title' => 'Place Order', 'url' => ''));
         $this->load->view('main', $data);
     }
 

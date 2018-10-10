@@ -15,8 +15,8 @@ class Payments extends CI_Controller {
     public function index() {
         $data['dir'] = 'payments';
         $data['page'] = 'index';
-        $data['page_title'] = 'Payments';
-        $data['nav_path'] = array(0 => array('title' => 'Payments', 'url' => ''));
+        $data['page_title'] = 'Payment Methods';
+        $data['nav_path'] = array(0 => array('title' => 'Payment Methods', 'url' => ''));
         $data['rows'] = $this->payments_mod->getPayments(false);
         $data['msg'] = $this->session->flashdata('msg');
         $this->load->view('main', $data);
@@ -32,9 +32,9 @@ class Payments extends CI_Controller {
         }
         $data['dir'] = 'payments';
         $data['page'] = 'payment_form';
-        $data['page_title'] = 'Payments';
+        $data['page_title'] = 'Add Payment Method';
         $data['form_action'] = site_url('payments/add_payment/');
-        $data['nav_path'] = array(0 => array('title' => 'Payments', 'url' => site_url('payments')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['nav_path'] = array(0 => array('title' => 'Payment Methods', 'url' => site_url('payments')), 1 => array('title' => 'Add User', 'url' => ''));
         $this->load->view('main', $data);
     }
 
@@ -60,8 +60,8 @@ class Payments extends CI_Controller {
         $data['form_action'] = site_url('payments/edit_payment/' . $data['method_id']);
         $data['dir'] = 'payments';
         $data['page'] = 'payment_form';
-        $data['page_title'] = 'Payments';
-        $data['nav_path'] = array(0 => array('title' => 'Payments', 'url' => site_url('payments')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['page_title'] = 'Edit Payment Method';
+        $data['nav_path'] = array(0 => array('title' => 'Payment Methods', 'url' => site_url('payments')), 1 => array('title' => 'Add User', 'url' => ''));
         $this->load->view('main', $data);
     }
 

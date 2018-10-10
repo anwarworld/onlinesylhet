@@ -60,6 +60,13 @@ $config = array(
         array('field' => 'method_des', 'label' => 'Method Details', 'rules' => ''),
         array('field' => 'method_status', 'label' => 'Method Status', 'rules' => ''),
     ),
+    'valid_delivery_method' => array(
+        array('field' => 'method_name', 'label' => 'Method Name', 'rules' => 'required'),
+        array('field' => 'method_fee', 'label' => 'Method Name', 'rules' => 'required'),
+        array('field' => 'method_min_amount', 'label' => 'Min. Shopping Amunt', 'rules' => 'required'),
+        array('field' => 'method_des', 'label' => 'Method Details', 'rules' => ''),
+        array('field' => 'method_status', 'label' => 'Method Status', 'rules' => ''),
+    ),
     ///
     'valid_sale' => array(
         array('field' => 'customer_name', 'label' => 'Customer Name', 'rules' => 'required|callback_check_customer_due'),

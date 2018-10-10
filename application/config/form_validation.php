@@ -41,5 +41,13 @@ $config = array(
         array('field' => 'password', 'label' => 'New Password', 'rules' => 'required'),
         array('field' => 'confirm_password', 'label' => 'Confirm Password', 'rules' => 'required|matches[password]')
     ),
+    'valid_place_order' => array(
+        array('field' => 'full_name', 'label' => 'Full Name', 'rules' => 'required'),
+        array('field' => 'email', 'label' => 'Email', 'rules' => 'required'),
+        array('field' => 'mobile', 'label' => 'Mobile', 'rules' => 'required'),
+        array('field' => 'address', 'label' => 'Address', 'rules' => 'required'),
+        array('field' => 'delivery_method', 'label' => 'Delivery Method', 'rules' => 'required'),
+        array('field' => 'payment_method', 'label' => 'Payment Method', 'rules' => 'required')
+    ),
 );
 ?>
