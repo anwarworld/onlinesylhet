@@ -42,12 +42,22 @@ $config = array(
         array('field' => 'confirm_password', 'label' => 'Confirm Password', 'rules' => 'required|matches[password]')
     ),
     'valid_place_order' => array(
-        array('field' => 'full_name', 'label' => 'Full Name', 'rules' => 'required'),
-        array('field' => 'email', 'label' => 'Email', 'rules' => 'required'),
-        array('field' => 'mobile', 'label' => 'Mobile', 'rules' => 'required'),
-        array('field' => 'address', 'label' => 'Address', 'rules' => 'required'),
+        array('field' => 'user_full_name', 'label' => 'Full Name', 'rules' => 'required'),
+        array('field' => 'user_email', 'label' => 'Email', 'rules' => 'required'),
+        array('field' => 'user_phone', 'label' => 'Mobile', 'rules' => 'required'),
+        array('field' => 'user_address', 'label' => 'Address', 'rules' => 'required'),
         array('field' => 'delivery_method', 'label' => 'Delivery Method', 'rules' => 'required'),
         array('field' => 'payment_method', 'label' => 'Payment Method', 'rules' => 'required')
     ),
+    'valid_place_order_unregister' => array(
+        array('field' => 'user_full_name', 'label' => 'Full Name', 'rules' => 'required'),
+        array('field' => 'user_email', 'label' => 'Email', 'rules' => 'required|callback_is_valid_user'),
+        array('field' => 'user_phone', 'label' => 'Mobile', 'rules' => 'required|callback_is_valid_user'),
+        array('field' => 'user_address', 'label' => 'Address', 'rules' => 'required'),
+        array('field' => 'user_password', 'label' => 'Password', 'rules' => 'required'),
+        array('field' => 'confirm_password', 'label' => 'Confirm Password', 'rules' => 'required|matches[user_password]'),
+        array('field' => 'delivery_method', 'label' => 'Delivery Method', 'rules' => 'required'),
+        array('field' => 'payment_method', 'label' => 'Payment Method', 'rules' => 'required')
+    )
 );
 ?>

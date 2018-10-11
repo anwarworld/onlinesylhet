@@ -4,17 +4,17 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <form id="checkout-form" action="<?= site_url('carts/checkout') ?>" method="post" class="clearfix">
+            <form id="checkout-form" action="<?= site_url('carts/placeOrder') ?>" method="post" class="clearfix">
                 <div class="col-md-6">
                     <div class="billing-details">
                         <div class="section-title">
                             <h3 class="title">Billing Details</h3>
                         </div>
-                        <p>Full Name: <?= $user_full_name ?></p>
-                        <p>Email: <?= $user_email ?></p>
-                        <p>Mobile: <?= $user_phone ?> </p>
-                        <p class="title">Delivery Address</p>
-                        <p><?= nl2br($address) ?></p>
+                        <p><strong>Full Name:</strong> <?= $user_full_name ?></p>
+                        <p><strong>Email:</strong> <?= $user_email ?></p>
+                        <p><strong>Mobile:</strong> <?= $user_phone ?> </p>
+                        <p class="title"><strong>Delivery Address</strong></p>
+                        <p><?= nl2br($user_address) ?></p>
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@
                             </tfoot>
                         </table>
                         <div class="pull-right">
-                            <button class="primary-btn" type="submit" name="save" value="save" >Place Order</button>
+                            <button class="primary-btn" type="submit" name="save" value="save" >Confirm Order</button>
                         </div>
                     </div>
 

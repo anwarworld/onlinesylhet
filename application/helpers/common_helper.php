@@ -134,6 +134,16 @@ class Common {
         }
     }
 
+    function do_login($data) {
+        $CI = & get_instance();
+        $CI->session->set_userdata('user_id', $data['user_id']);
+        $CI->session->set_userdata('user_phone', $data['user_phone']);
+        $CI->session->set_userdata('user_email', $data['user_email']);
+        $CI->session->set_userdata('user_address', $data['user_address']);
+        $CI->session->set_userdata('user_full_name', $data['user_full_name']);
+        $CI->session->set_userdata('user_logged_in', TRUE);
+    }
+
     public static function getSessionUserData() {
         $CI = & get_instance();
         $data = array();
@@ -142,7 +152,7 @@ class Common {
             $data['user_full_name'] = $CI->session->userdata('user_full_name');
             $data['user_email'] = $CI->session->userdata('user_email');
             $data['user_phone'] = $CI->session->userdata('user_phone');
-            $data['address'] = $CI->session->userdata('address');
+            $data['user_address'] = $CI->session->userdata('user_address');
         }
 
         return $data;

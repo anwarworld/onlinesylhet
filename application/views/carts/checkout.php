@@ -14,31 +14,38 @@
                             <h3 class="title">Billing Details</h3>
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="full_name" value="<?= $user_full_name ?>"  placeholder="Full Name">
-                            <?= form_error('full_name', '<span class="bg-red-active">', '</span>') ?>
+                            <input class="input" type="text" name="user_full_name" value="<?= $user_full_name ?>"  placeholder="Full Name">
+                            <?= form_error('user_full_name', '<span class="bg-red-active">', '</span>') ?>
                         </div>
                         <div class="form-group">
-                            <input class="input" type="email" name="email"  value="<?= $user_email ?>" placeholder="Email">
-                            <?= form_error('email', '<span class="bg-red-active">', '</span>') ?>
+                            <input class="input" type="email" name="user_email"  value="<?= $user_email ?>" placeholder="Email">
+                            <?= form_error('user_email', '<span class="bg-red-active">', '</span>') ?>
                         </div> 
                         <div class="form-group">
-                            <input class="input" type="tel" name="mobile" value="<?= $user_phone ?>" placeholder="Mobile Phone Number">
-                            <?= form_error('mobile', '<span class="bg-red-active">', '</span>') ?>
+                            <input class="input" type="tel" name="user_phone" value="<?= $user_phone ?>" placeholder="Mobile Phone Number">
+                            <?= form_error('user_phone', '<span class="bg-red-active">', '</span>') ?>
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="address" placeholder="Delevery Address">
-                            <?= form_error('address', '<span class="bg-red-active">', '</span>') ?>
+                            <input class="input" type="text" name="user_address" value="<?= $user_address ?>" placeholder="Delevery Address">
+                            <?= form_error('user_address', '<span class="bg-red-active">', '</span>') ?>
                         </div>
                         <?php if (!Common::isLoggedIn()): ?>
                             <div class="form-group">
                                 <div class="input-checkbox">
-                                    <input type="checkbox" name="new_register" value="1" id="register">
+                                    <input type="checkbox" name="new_register" <?= $new_register == 1 ? 'checked="checked"' : '' ?> value="1" id="register">
                                     <label class="font-weak" for="register">Create Account?</label>
                                     <div class="caption">
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
                                         </p>
-                                        <input class="input" type="password" name="password" placeholder="Enter Your Password">
+                                        <div class="form-group">
+                                            <input class="input"  type="password" name="user_password" placeholder="Enter Your Password" />
+                                            <?= form_error('user_password', '<span class="bg-red-active">', '</span>') ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="input"  type="password" name="confirm_password" placeholder="Enter Confirm Password" />
+                                            <?= form_error('confirm_password', '<span class="bg-red-active">', '</span>') ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +61,7 @@
                         <?php foreach ($delivery_methods as $key => $method):
                             ?>
                             <!--<div class="input-checkbox">-->
-                            <input type="radio" name="delivery_method" value="<?= $method['method_id'] ?>" id="shipping-<?= $key ?>">
+                            <input type="radio" name="delivery_method" <?= $delivery_method == $method['method_id'] ? 'checked="checked"' : '' ?> value="<?= $method['method_id'] ?>" id="shipping-<?= $key ?>">
                             <label for="shipping-<?= $key ?>"><?= $method['method_name'] . ' - &#2547;' . $method['method_fee'] ?></label>
                             <div class="caption">
                                 <p><?= $method['method_des'] ?></p>
@@ -71,7 +78,7 @@
                         <?php foreach ($payment_methods as $key => $method):
                             ?>
                             <!--<div class="input-checkbox">-->
-                            <input type="radio" name="payment_method" value="<?= $method['method_id'] ?>" id="payments-<?= $method['method_id'] ?>" />
+                            <input type="radio" name="payment_method" <?= $payment_method == $method['method_id'] ? 'checked="checked"' : '' ?> value="<?= $method['method_id'] ?>" id="payments-<?= $method['method_id'] ?>" />
                             <label for="payments-<?= $method['method_id'] ?>"><?= $method['method_name'] ?></label>
                             <div class="caption">
                                 <p><?= $method['method_des'] ?></p>

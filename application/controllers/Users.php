@@ -64,4 +64,13 @@ class Users extends CI_Controller {
         }
     }
 
+    public function orders() {
+        $data['rows'] = $this->users_mod->getAllOrders(0, 10);
+        $data['dir'] = 'users';
+        $data['page'] = 'orders';
+        $data['page_title'] = 'My Order List';
+        $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'My Account', 'url' => ''));
+        $this->load->view('main', $data);
+    }
+
 }

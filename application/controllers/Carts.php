@@ -16,6 +16,7 @@ class Carts extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('carts_mod');
+        $this->load->library('form_validation');
     }
 
     public function index() {
@@ -29,14 +30,25 @@ class Carts extends CI_Controller {
     }
 
     public function checkout() {
-        $this->load->library('form_validation');
+
         if (filter_input(INPUT_POST, 'save')) {
-            if ($this->form_validation->run('valid_place_order')) {
+            if (Common::isLoggedIn()) {
+                if ($this->form_validation->run('valid_place_order')) {
+                    $this->carts_mod->placeOrderDetails();
+                    print_r($_POST);
+                    redirect('carts/placeOrder');
+                }
+            } else if ($this->form_validation->run('valid_place_order_unregister')) {
+                $this->carts_mod->saveUser();
                 $this->carts_mod->placeOrderDetails();
                 redirect('carts/placeOrder');
             }
+            /* @var $data type */
+            $data = $_POST;
+        } else {
+            $data = Common::getSessionUserData();
         }
-        $data = Common::getSessionUserData();
+
         $data['payment_methods'] = $this->carts_mod->getPaymentMethods();
         $data['delivery_methods'] = $this->carts_mod->getDeliveryMethods();
         $data['dir'] = 'carts';
@@ -46,10 +58,27 @@ class Carts extends CI_Controller {
         $this->load->view('main', $data);
     }
 
+    public function is_valid_user() {
+        if ($this->carts_mod->isValidUser()) {
+            $this->form_validation->set_message('is_valid_user', 'You have already an account using email/mobile.');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
     public function placeOrder() {
+        if (!Common::isLoggedIn()) {
+            Common::redirect();
+        }
         if (filter_input(INPUT_POST, 'save')) {
-            if ($this->form_validation->run('valid_place_order')) {
-                
+            if ($this->carts_mod->confirmOrder()) {
+                $this->session->set_flashdata('msg', 'Thank you! Your order is successfully submitted. We will come back soon.');
+                $this->carts_mod->flashSessionOrder();
+                redirect('users/orders');
+            } else {
+                $this->session->set_flashdata('msg', 'Sorry! Something went to be worng. Please try again.');
+                redirect('users/orders');
             }
         }
         $data = Common::getSessionUserData();

@@ -24,19 +24,11 @@ class login_mod extends CI_Model {
         $sql = "SELECT * FROM users WHERE (user_email = ? OR user_phone = ? ) AND user_password = ? AND user_status= ?";
         $query = $this->db->query($sql, array($mobile_email, $mobile_email, $user_password, $user_status));
         if ($query->num_rows() > 0) {
-            $this->do_login($query->row_array());
+            Common::do_login($query->row_array());
             return TRUE;
         } else {
             return FALSE;
         }
-    }
-
-    function do_login($data) {
-        $this->session->set_userdata('user_id', $data['user_id']);
-        $this->session->set_userdata('user_phone', $data['user_phone']);
-        $this->session->set_userdata('user_email', $data['user_email']);
-        $this->session->set_userdata('user_full_name', $data['user_full_name']);
-        $this->session->set_userdata('user_logged_in', TRUE);
     }
 
     function isValidUser() {
@@ -67,7 +59,7 @@ class login_mod extends CI_Model {
         $user_id = $this->db->insert_id();
         if ($user_id > 0) {
             $data['user_d'] = $user_id;
-            $this->do_login($data);
+            Common::do_login($data);
             return TRUE;
         } else {
             return FALSE;
