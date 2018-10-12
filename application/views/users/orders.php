@@ -19,35 +19,33 @@
                 <div class="section-title">
                     <h4 class="title">My Order History</h4>
                 </div>
-                <table class="shopping-cart-table table">
+                <table class="table">
                     <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th></th>
-                            <th class="text-center">Price</th>
+                        <tr class="text-center">
+                            <th>Order ID</th>
+                            <th>Order By</th>
+                            <th class="text-center">Date</th>
                             <th class="text-center">Quantity</th>
-                            <th class="text-center">Total</th>
-                            <th class="text-right"></th>
+                            <th class="text-right">Total</th>
+                            <th class="text-center">Delivered By</th>
+                            <th class="text-center">Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         if (is_array($rows) && count($rows) > 0) :
-                            foreach ($rows as $cart) :
+                            foreach ($rows as $row) :
                                 ?>
-                                <tr class="product-details-<?= $cart['product_id'] ?>">
-                                    <td  class="thumb"><img src="uploads/products/thumb<?= $cart['product_image'] ?>" alt="<?= $cart['product_name'] ?>"></td>
-                                    <td class="details">
-                                        <a href="<?= site_url('products/details/' . $cart['product_id'] . '/' . Common::encodeMyURL($cart['product_name'])) ?>"><?= $cart['product_name'] ?></a>
+                                <tr class="text-center">
+                                    <td><?= $row['order_transaction_id'] ?></td>
+                                    <td>
+                                        <a href="<?= site_url('users/order_details/' . $row['order_id'] . '/' . $row['order_transaction_id']) ?>"><?= $row['user_full_name'] ?></a>
                                     </td>
-                                    <td class="price text-center"><strong>&#2547; <?= $cart['product_price'] ?></strong>
-                                        <?php if ($cart['product_regular_price'] > $cart['product_price']): ?>
-                                            <br><del class="font-weak"><small>&#2547; <?= $cart['product_regular_price'] ?></small></del>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td class="qty text-center"><input class="input quantity-value-change" rel="<?= $cart['quantity'] ?>" title="<?= $cart['product_id'] ?>" type="number" value="<?= $cart['quantity'] ?>"></td>
-                                    <td class="total text-center product-total-<?= $cart['product_id'] ?>"><strong class="primary-color">&#2547; <?= $cart['product_price'] * $cart['quantity'] ?></strong></td>
-                                    <td class="text-right"><button class="main-btn icon-btn remove-from-cart" value="<?= $cart['product_id'] ?>" title="<?= $cart['product_name'] ?>"><i class="fa fa-close"></i></button></td>
+                                    <td><?= $row['order_date'] ?></td>
+                                    <td class="price text-center"><strong><?= $row['total_quantity'] ?></strong></td>
+                                    <td class="price text-right primary-color"><strong>&#2547; <?= $row['total_amount'] ?></strong></td>
+                                    <td class="total text-center"><?= $row['delivery_name'] ?></td>
+                                    <td class="total text-center"><?= $row['delivery_status'] ?></td>
                                 </tr>
                                 <?php
                             endforeach;
@@ -56,23 +54,17 @@
                         endif;
                         ?>
                     </tbody>
-                    <tfoot>
+<!--                    <tfoot>
                         <tr>
-                            <th class="empty" colspan="3"></th>
-                            <th>SUBTOTAL</th>
-                            <th colspan="2" class="sub-total">&#2547; <?= $carts_info['cart_total_amount'] ?></th>
+                            <th>Order ID</th>
+                            <th class="text-center">Order By</th>
+                            <th class="text-right">Date</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Total</th>
+                            <th class="text-right">Delivery Man Name</th>
+                            <th class="text-right">Status</th>
                         </tr>
-<!--                            <tr>
-                            <th class="empty" colspan="3"></th>
-                            <th>SHIPING</th>
-                            <td colspan="2">Free Shipping</td>
-                        </tr>-->
-                        <tr>
-                            <th class="empty" colspan="3"></th>
-                            <th>TOTAL</th>
-                            <th colspan="2" class="total">&#2547; <?= $carts_info['cart_total_amount'] ?></th>
-                        </tr>
-                    </tfoot>
+                    </tfoot>-->
                 </table>
             </div>
         </div>

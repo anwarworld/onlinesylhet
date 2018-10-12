@@ -134,7 +134,7 @@ class Common {
         }
     }
 
-    function do_login($data) {
+    public static function do_login($data) {
         $CI = & get_instance();
         $CI->session->set_userdata('user_id', $data['user_id']);
         $CI->session->set_userdata('user_phone', $data['user_phone']);

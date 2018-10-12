@@ -1,54 +1,45 @@
-<!-- ./wrapper -->
+<!-- Bootstrap core JavaScript
+   ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="tools/js/jquery-slim.min.js"><\/script>')</script>
+<script src="tools/js/popper.min.js"></script>
+<script src="tools/js/bootstrap.min.js"></script>
 
-<!-- jQuery 3 -->
-<script src="tools/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="tools/bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="tools/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="tools/theme/js/adminlte.min.js"></script>
-<!-- Sparkline -->
-<script src="tools/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap  -->
-<script src="tools/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="tools/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-
-<!-- DataTables -->
-<script src="tools/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="tools/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- Select2 -->
-<script src="tools/select2/dist/js/select2.full.min.js"></script>
-<!-- SlimScroll -->
-<script src="tools/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- ChartJS -->
-<script src="tools/chart.js/Chart.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="tools/theme/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="tools/theme/js/demo.js"></script>
-<!-- page script -->
+<!-- Icons -->
+<script src="tools/js/feather.min.js"></script>
 <script>
-    $(function() {
-        $('#example1').DataTable()
-        $('#example2').DataTable({
-            'paging': true,
-            'lengthChange': false,
-            'searching': false,
-            'ordering': true,
-            'info': true,
-            'autoWidth': false
-        })
-        $('.select2').select2()
-    })
+    feather.replace()
 </script>
-<?php if ($txt_editor): ?>
-    <!-- Bootstrap WYSIHTML5 -->
-    <script src="tools/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <script>
-        $(function() {
-            //bootstrap WYSIHTML5 - text editor
-            $('.textarea').wysihtml5()
-        })
-    </script>
-<?php endif; ?>
+
+<!-- Graphs -->
+<script src="tools/js/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            datasets: [{
+                    data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                    lineTension: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: '#007bff',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#007bff'
+                }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+</script>

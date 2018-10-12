@@ -43,6 +43,7 @@ class Login extends CI_Controller {
                 $data['redirect_url'] = site_url('users');
             }
         }
+        header('Content-Type: application/json');
         echo json_encode($data);
     }
 

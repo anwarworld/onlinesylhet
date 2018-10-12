@@ -126,17 +126,17 @@
                                 <div class="shopping-cart-list">
                                     <?php
                                     if (is_array($carts_info['rows']) && count($carts_info['rows']) > 0) :
-                                        foreach ($carts_info['rows'] as $cart) :
+                                        foreach ($carts_info['rows'] as $row) :
                                             ?>
-                                            <div class="product product-widget product-details-<?= $cart['product_id'] ?>">
+                                            <div class="product product-widget product-details-<?= $row['product_id'] ?>">
                                                 <div class="product-thumb">
-                                                    <img src="uploads/products/thumb<?= $cart['product_image'] ?>" alt="<?= $cart['product_name'] ?>" />
+                                                    <img src="uploads/products/thumb<?= $row['product_image'] ?>" alt="<?= $row['product_name'] ?>" />
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-price">&#2547; <?= $cart['product_price'] ?> <span class="qty"> X <?= $cart['quantity'] ?></span></h3>
-                                                    <h2 class="product-name"><a href="<?= site_url('products/details/' . $cart['product_id'] . '/' . Common::encodeMyURL($cart['product_name'])) ?>"><?= $cart['product_name'] ?></a></h2>
+                                                    <h3 class="product-price">&#2547; <?= $row['product_price'] ?> <span class="qty"> X <?= $row['quantity'] ?></span></h3>
+                                                    <h2 class="product-name"><a href="<?= site_url('products/details/' . $row['product_id'] . '/' . Common::encodeMyURL($row['product_name'])) ?>"><?= $row['product_name'] ?></a></h2>
                                                 </div>
-                                                <button class="cancel-btn remove-from-cart" value="<?= $cart['product_id'] ?>" title="<?= $cart['product_name'] ?>"><i class="fa fa-trash"></i></button>
+                                                <button class="cancel-btn remove-from-cart" value="<?= $row['product_id'] ?>" title="<?= $row['product_name'] ?>"><i class="fa fa-trash"></i></button>
                                             </div>
                                             <?php
                                         endforeach;

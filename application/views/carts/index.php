@@ -23,21 +23,21 @@
                         <tbody>
                             <?php
                             if (is_array($carts_info['rows']) && count($carts_info['rows']) > 0) :
-                                foreach ($carts_info['rows'] as $cart) :
+                                foreach ($carts_info['rows'] as $row) :
                                     ?>
-                                    <tr class="product-details-<?= $cart['product_id'] ?>">
-                                        <td  class="thumb"><img src="uploads/products/thumb<?= $cart['product_image'] ?>" alt="<?= $cart['product_name'] ?>"></td>
+                                    <tr class="product-details-<?= $row['product_id'] ?>">
+                                        <td  class="thumb"><img src="uploads/products/thumb<?= $row['product_image'] ?>" alt="<?= $row['product_name'] ?>"></td>
                                         <td class="details">
-                                            <a href="<?= site_url('products/details/' . $cart['product_id'] . '/' . Common::encodeMyURL($cart['product_name'])) ?>"><?= $cart['product_name'] ?></a>
+                                            <a href="<?= site_url('products/details/' . $row['product_id'] . '/' . Common::encodeMyURL($row['product_name'])) ?>"><?= $row['product_name'] ?></a>
                                         </td>
-                                        <td class="price text-center"><strong>&#2547; <?= $cart['product_price'] ?></strong>
-                                            <?php if ($cart['product_regular_price'] > $cart['product_price']): ?>
-                                                <br><del class="font-weak"><small>&#2547; <?= $cart['product_regular_price'] ?></small></del>
+                                        <td class="price text-center"><strong>&#2547; <?= $row['product_price'] ?></strong>
+                                            <?php if ($row['product_regular_price'] > $row['product_price']): ?>
+                                                <br><del class="font-weak"><small>&#2547; <?= $row['product_regular_price'] ?></small></del>
                                             <?php endif; ?>
                                         </td>
-                                        <td class="qty text-center"><input class="input quantity-value-change" rel="<?= $cart['quantity'] ?>" title="<?= $cart['product_id'] ?>" type="number" value="<?= $cart['quantity'] ?>"></td>
-                                        <td class="total text-center product-total-<?= $cart['product_id'] ?>"><strong class="primary-color">&#2547; <?= $cart['product_price'] * $cart['quantity'] ?></strong></td>
-                                        <td class="text-right"><button class="main-btn icon-btn remove-from-cart" value="<?= $cart['product_id'] ?>" title="<?= $cart['product_name'] ?>"><i class="fa fa-close"></i></button></td>
+                                        <td class="qty text-center"><input class="input quantity-value-change" rel="<?= $row['quantity'] ?>" title="<?= $row['product_id'] ?>" type="number" value="<?= $row['quantity'] ?>"></td>
+                                        <td class="total text-center product-total-<?= $row['product_id'] ?>"><strong class="primary-color">&#2547; <?= $row['product_price'] * $row['quantity'] ?></strong></td>
+                                        <td class="text-right"><button class="main-btn icon-btn remove-from-cart" value="<?= $row['product_id'] ?>" title="<?= $row['product_name'] ?>"><i class="fa fa-close"></i></button></td>
                                     </tr>
                                     <?php
                                 endforeach;

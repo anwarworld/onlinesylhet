@@ -3,63 +3,47 @@
     <head>
         <?php include_once 'shared/html_header.php'; ?>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body>
         <?php $sessionUserData = Common::getSessionUserData() ?>
-        <div class="wrapper">
-            <header class="main-header">
-                <?php include_once 'shared/header.php'; ?>
-            </header>
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
-                <?php include_once 'shared/left_navigation.php'; ?>
-            </aside>
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        <?= $page_title ?>
-                        <small>Version 2.0</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="<?= site_url() ?>"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                        <?php
-                        if (isset($nav_path)) {
-                            foreach ($nav_path as $nav) {
-                                if ($nav['url'] != '') {
-                                    echo '<li><a href="' . $nav['url'] . '">' . $nav['title'] . '</a></li>';
-                                } else {
-                                    echo '<li class="active">' . $nav['title'] . '</li>';
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">OnlineSylhet</a>
+            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="#">Sign out</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <?php include_once 'shared/left_navigation.php'; ?>
+                </nav>
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <?php
+                            if (isset($nav_path)) {
+                                foreach ($nav_path as $nav) {
+                                    if ($nav['url'] != '') {
+                                        echo '<li class="breadcrumb-item"><a href="' . $nav['url'] . '">' . $nav['title'] . '</a></li>';
+                                    } else {
+                                        echo '<li class="breadcrumb-item active">' . $nav['title'] . '</li>';
+                                    }
                                 }
                             }
-                        }
-                        ?>
-
-                    </ol>
-                </section>
-                <!-- Main content -->
-                <section class="content">
-                    <?php include_once $dir . '/' . $page . '.php'; ?>
-                </section>
-                <!-- /.content -->
+                            ?>
+                        </ol>
+                    </nav>
+                    <!-- Main content -->
+                    <section class="content">
+                        <?php include_once $dir . '/' . $page . '.php'; ?>
+                    </section>
+                    <!-- /.content -->
+                </main>
+                <!-- /.content-wrapper -->
             </div>
-            <!-- /.content-wrapper -->
-
-            <footer class="main-footer">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> 2.4.0
-                </div>
-                <strong>Copyright &copy; <?= date('Y') ?> <a href="#">anwarworld@gmail.com</a>.</strong> All rights reserved.
-            </footer>
-
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <?php include_once 'shared/right_navigation.php'; ?>
-            </aside>
-            <!-- /.control-sidebar -->
-            <!-- Add the sidebar's background. This div must be placed
-                 immediately after the control sidebar -->
-            <div class="control-sidebar-bg"></div>
         </div>
         <?php include_once 'shared/footer.php'; ?>
         <?php common::track_uri(); ?>

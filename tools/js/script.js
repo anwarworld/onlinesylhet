@@ -40,6 +40,7 @@ var users = {
             data: $j('form#user-signin').serialize(),
             dataType: 'json',
             success: function(jsonData) {
+                console.log(jsonData);
                 if (jsonData.success === false) {
                     $j('.form-control').addClass('alert-danger');
                 } else {
