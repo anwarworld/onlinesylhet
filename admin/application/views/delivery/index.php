@@ -1,3 +1,14 @@
+<div class="float-sm-left">
+    <a href="<?= site_url('delivery/add_delivery') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Delivery Method</a>
+</div>
+<div class="float-sm-right">
+    <nav aria-label="DeliveryMethod" >
+        <ul class="pagination">
+            <?= $pagination_links ?>
+        </ul>
+    </nav>
+</div>
+
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">
@@ -6,7 +17,7 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Method Name</th>
                 <th>Delivery Fee</th>
@@ -26,7 +37,7 @@
                         <td><?= $row['method_name'] ?></td>
                         <td><?= $row['method_fee'] ?></td>
                         <td><?= $row['method_min_amount'] ?></td>
-                        <td><?= $row['method_des'] ?></td>
+                        <td><?= word_limiter($row['method_des'], 6) ?></td>
                         <td><img src="../uploads/delivery/<?= $row['method_image'] ?>" height="50" width="50" alt="<?= $row['method_name'] ?>"/></td>
                         <td><?= ($row['method_status'] == 1) ? 'Enabled' : 'Disabled'; ?></td>
                         <td>
@@ -40,17 +51,5 @@
             }
             ?>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Method Name</th>
-                <th>Delivery Fee</th>
-                <th>Min. Shopping</th>
-                <th>Method Details</th>
-                <th>Method Image</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-            </tr>
-        </tfoot>
     </table>
 </div>

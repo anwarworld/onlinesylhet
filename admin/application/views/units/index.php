@@ -1,3 +1,14 @@
+<div class="float-sm-left">
+    <a href="<?= site_url('units/add_unit') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Unit</a>
+</div>
+<div class="float-sm-right">
+    <nav aria-label="Users" >
+        <ul class="pagination">
+            <?= $pagination_links ?>
+        </ul>
+    </nav>
+</div>
+
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">
@@ -6,7 +17,7 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Unit Name</th>
                 <th>Status</th>

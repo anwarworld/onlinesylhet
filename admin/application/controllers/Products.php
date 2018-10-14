@@ -13,12 +13,36 @@ class Products extends CI_Controller {
     }
 
     public function index() {
+        //       Pagination start
+        $this->load->library("pagination");
+        $start = $this->uri->segment(3);
+        if ($start == '') {
+            $start = 0;
+        }
+        $total_rows = $this->products_mod->getTotalProducts();
+        $config['uri_segment'] = 3;
+        $config['base_url'] = site_url('products/index');
+        $config['total_rows'] = $total_rows;
+        $config['per_page'] = 20;
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="page-item active">';
+        $config['cur_tag_close'] = '</li>';
+        $config['prev_tag_open'] = '<li class="page-item disabled">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['next_link'] = "Next &raquo;";
+        $config['prev_link'] = "&laquo; Previous";
+        $this->pagination->initialize($config);
+        $data['pagination_links'] = $this->pagination->create_links();
+        $data['rows'] = $this->products_mod->getProducts(true, $start, $config['per_page']);
+//       Pagination End
         $data['dir'] = 'products';
         $data['page'] = 'index';
         $data['page_title'] = 'Products';
         $data['nav_path'] = array(0 => array('title' => 'Products', 'url' => ''));
         $data['msg'] = $this->session->flashdata('msg');
-        $data['rows'] = $this->products_mod->getProducts(false);
         $this->load->view('main', $data);
     }
 
@@ -39,8 +63,8 @@ class Products extends CI_Controller {
         $data['parent_cateories'] = $this->products_mod->getCategories(0);
         $data['brands'] = $this->products_mod->getBrands();
         $data['sellers'] = $this->products_mod->getSellers();
-        $data['product_types']=  Common::getProductTypes();
-        $data['nav_path'] = array(0 => array('title' => 'Products', 'url' => site_url('products')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['product_types'] = Common::getProductTypes();
+        $data['nav_path'] = array(0 => array('title' => 'Products', 'url' => site_url('products')), 1 => array('title' => 'Add Product', 'url' => ''));
         $this->load->view('main', $data);
     }
 
@@ -70,8 +94,8 @@ class Products extends CI_Controller {
         $data['parent_cateories'] = $this->products_mod->getCategories(0);
         $data['brands'] = $this->products_mod->getBrands();
         $data['sellers'] = $this->products_mod->getSellers();
-        $data['product_types']=  Common::getProductTypes();
-        $data['nav_path'] = array(0 => array('title' => 'Products', 'url' => site_url('products')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['product_types'] = Common::getProductTypes();
+        $data['nav_path'] = array(0 => array('title' => 'Products', 'url' => site_url('products')), 1 => array('title' => 'Edit Product', 'url' => ''));
         $this->load->view('main', $data);
     }
 

@@ -134,7 +134,7 @@ class Pages extends CI_Controller {
         $data['page'] = 'setting_form';
         $data['page_title'] = 'Settings';
         $data['form_action'] = site_url('pages/settings');
-        $data['nav_path'] = array(array('title' => 'Pages', 'url' => site_url('pages')), array('title' => 'Settings', 'url' => ''));
+        $data['nav_path'] = array(array('title' => 'Pages', 'url' => site_url('pages')), array('title' => 'Web Settings', 'url' => ''));
         $this->load->view('main', $data);
     }
 

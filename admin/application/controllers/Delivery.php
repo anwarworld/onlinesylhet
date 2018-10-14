@@ -13,6 +13,7 @@ class Delivery extends CI_Controller {
     }
 
     public function index() {
+        $this->load->helper('text');
         $data['dir'] = 'delivery';
         $data['page'] = 'index';
         $data['page_title'] = 'Delivery Methods';

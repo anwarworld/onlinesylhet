@@ -1,3 +1,14 @@
+<div class="float-sm-left">
+    <a href="<?= site_url('brands/add_brand') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Brand</a>
+</div>
+<div class="float-sm-right">
+    <nav aria-label="Brands" >
+        <ul class="pagination">
+            <?= $pagination_links ?>
+        </ul>
+    </nav>
+</div>
+
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">

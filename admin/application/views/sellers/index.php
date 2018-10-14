@@ -1,3 +1,14 @@
+<div class="float-sm-left">
+    <a href="<?= site_url('sellers/add_seller') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Seller</a>
+</div>
+<div class="float-sm-right">
+    <nav aria-label="Sellers" >
+        <ul class="pagination">
+            <?= $pagination_links ?>
+        </ul>
+    </nav>
+</div>
+
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">
@@ -6,7 +17,7 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Seller Name</th>
                 <th>Email</th>
@@ -40,16 +51,5 @@
             }
             ?>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Seller Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>City</th>
-                <th>Address</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </tfoot>
     </table>
 </div>

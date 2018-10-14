@@ -34,7 +34,7 @@ class Brands extends CI_Controller {
         $data['page'] = 'brand_form';
         $data['page_title'] = 'Brands';
         $data['form_action'] = site_url('brands/add_brand/');
-        $data['nav_path'] = array(0 => array('title' => 'Brands', 'url' => site_url('brands')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['nav_path'] = array(0 => array('title' => 'Brands', 'url' => site_url('brands')), 1 => array('title' => 'Add Brand', 'url' => ''));
         $this->load->view('main', $data);
     }
 
@@ -61,7 +61,7 @@ class Brands extends CI_Controller {
         $data['dir'] = 'brands';
         $data['page'] = 'brand_form';
         $data['page_title'] = 'Brands';
-        $data['nav_path'] = array(0 => array('title' => 'Brands', 'url' => site_url('brands')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['nav_path'] = array(0 => array('title' => 'Brands', 'url' => site_url('brands')), 1 => array('title' => 'Edit Brand', 'url' => ''));
         $this->load->view('main', $data);
     }
 

@@ -100,18 +100,19 @@
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" for="image">User Image</span>
+                <span class="input-group-text" for="image">Product Image</span>
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="image" id="image" aria-describedby="image">
                 <label class="custom-file-label" for="image">Choose file</label>
             </div>
         </div>
-        <div>
+        <div class="form-group">
             <?php if ($product_image != ''): ?>
                 <img src="../uploads/products/<?= $product_image ?>" alt="<?= $product_name ?>" width="50" height="50" />
                 <input type="hidden" name="h_image" value="<?= $product_image ?>" />
             <?php endif; ?>
+            <p class="help-block">[Width X Height]: 700px X 600px</p>
         </div>
         <div class="form-group form-check">
             <label><input name="product_status" <?php echo ($product_status == 1) ? 'checked="checked"' : ''; ?> value="1"  class="form-check-input" type="radio">Enabled</label>

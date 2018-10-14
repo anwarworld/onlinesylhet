@@ -13,6 +13,7 @@ class Payments extends CI_Controller {
     }
 
     public function index() {
+        $this->load->helper('text');
         $data['dir'] = 'payments';
         $data['page'] = 'index';
         $data['page_title'] = 'Payment Methods';
@@ -34,7 +35,7 @@ class Payments extends CI_Controller {
         $data['page'] = 'payment_form';
         $data['page_title'] = 'Add Payment Method';
         $data['form_action'] = site_url('payments/add_payment/');
-        $data['nav_path'] = array(0 => array('title' => 'Payment Methods', 'url' => site_url('payments')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['nav_path'] = array(0 => array('title' => 'Payment Methods', 'url' => site_url('payments')), 1 => array('title' => 'Add Pyament Method', 'url' => ''));
         $this->load->view('main', $data);
     }
 
@@ -61,7 +62,7 @@ class Payments extends CI_Controller {
         $data['dir'] = 'payments';
         $data['page'] = 'payment_form';
         $data['page_title'] = 'Edit Payment Method';
-        $data['nav_path'] = array(0 => array('title' => 'Payment Methods', 'url' => site_url('payments')), 1 => array('title' => 'Add User', 'url' => ''));
+        $data['nav_path'] = array(0 => array('title' => 'Payment Methods', 'url' => site_url('payments')), 1 => array('title' => 'Edit Pyament Method', 'url' => ''));
         $this->load->view('main', $data);
     }
 

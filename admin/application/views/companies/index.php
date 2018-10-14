@@ -1,3 +1,14 @@
+<div class="float-sm-left">
+    <a href="<?= site_url('companies/add_company') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Company</a>
+</div>
+<div class="float-sm-right">
+    <nav aria-label="Company" >
+        <ul class="pagination">
+            <?= $pagination_links ?>
+        </ul>
+    </nav>
+</div>
+<div class="clearfix"></div>
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">
@@ -6,9 +17,10 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Company Name</th>
+                <th></th>
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Address</th>
@@ -39,15 +51,5 @@
             }
             ?>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Company ID</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </tfoot>
     </table>
 </div>

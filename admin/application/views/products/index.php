@@ -1,3 +1,14 @@
+<div class="float-sm-left">
+    <a href="<?= site_url('products/add_product') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Product</a>
+</div>
+<div class="float-sm-right">
+    <nav aria-label="Users" >
+        <ul class="pagination">
+            <?= $pagination_links ?>
+        </ul>
+    </nav>
+</div>
+
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">
@@ -6,7 +17,7 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Category</th>
                 <th>Product image</th>
@@ -36,14 +47,5 @@
             }
             ?>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Parent Product</th>
-                <th>Product Name</th>
-                <th>Product image</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </tfoot>
     </table>
 </div>

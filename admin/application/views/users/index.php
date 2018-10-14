@@ -1,4 +1,14 @@
-<a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add User</a>
+<div class="float-sm-left">
+    <a href="<?= site_url('users/add_user') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add User</a>
+</div>
+<div class="float-sm-right">
+    <nav aria-label="Users" >
+        <ul class="pagination">
+            <?= $pagination_links ?>
+        </ul>
+    </nav>
+</div>
+
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">

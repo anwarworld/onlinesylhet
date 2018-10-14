@@ -1,3 +1,6 @@
+<div class="float-sm-left">
+    <a href="<?= site_url('sliders/add_slider') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Slider</a>
+</div>
 <div class="table-responsive">
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">
@@ -6,7 +9,7 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Slider Name</th>
                 <th>Slider Image</th>

@@ -13,11 +13,36 @@ class Companies extends CI_Controller {
     }
 
     public function index() {
+         //       Pagination start
+        $this->load->library("pagination");
+        $start = $this->uri->segment(3);
+        if ($start == '') {
+            $start = 0;
+        }
+        $total_rows = $this->companies_mod->getTotalCompanies();
+        $config['uri_segment'] = 3;
+        $config['base_url'] = site_url('users/index');
+        $config['total_rows'] = $total_rows;
+        $config['per_page'] = 5;
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="page-item active">';
+        $config['cur_tag_close'] = '</li>';
+        $config['prev_tag_open'] = '<li class="page-item disabled">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['next_link'] = "Next &raquo;";
+        $config['prev_link'] = "&laquo; Previous";
+        $this->pagination->initialize($config);
+        $data['pagination_links'] = $this->pagination->create_links();
+        $data['rows'] = $this->companies_mod->getCompanies(true, $start, $config['per_page']);
+//       Pagination End
+        
         $data['dir'] = 'companies';
         $data['page'] = 'index';
         $data['page_title'] = 'Companies';
         $data['nav_path'] = array(0 => array('title' => 'Companies', 'url' => ''));
-        $data['rows'] = $this->companies_mod->getCompanies(false);
         $data['msg'] = $this->session->flashdata('msg');
 
         $this->load->view('main', $data);
