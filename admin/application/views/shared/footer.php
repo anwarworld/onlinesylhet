@@ -5,7 +5,8 @@
 <script>window.jQuery || document.write('<script src="tools/js/jquery-slim.min.js"><\/script>')</script>
 <script src="tools/js/popper.min.js"></script>
 <script src="tools/js/bootstrap.min.js"></script>
-
+<!-- Select2 -->
+<script src="tools/select2/dist/js/select2.full.min.js"></script>
 <!-- Icons -->
 <script src="tools/js/feather.min.js"></script>
 <script>
@@ -15,6 +16,9 @@
 <!-- Graphs -->
 <script src="tools/js/Chart.min.js"></script>
 <script>
+       $(function() {
+        $('#productCategory').select2()
+    })
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
         type: 'line',

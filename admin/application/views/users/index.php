@@ -1,5 +1,5 @@
+<a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add User</a>
 <div class="table-responsive">
-    <a href="<?= site_url('users/add_user') ?>"><span data-feather="user-plus"></span>Add User</a>
     <?php if ($msg != ''): ?>
         <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -7,7 +7,7 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>User ID</th>
                 <th>Full Name</th>
@@ -38,15 +38,5 @@
             }
             ?>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>User ID</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </tfoot>
     </table>
 </div>

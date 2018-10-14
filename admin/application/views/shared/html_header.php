@@ -10,6 +10,8 @@
 
 <!-- Bootstrap core CSS -->
 <link href="tools/bootstrap.min.css" rel="stylesheet">
+<!-- Select2 -->
+<link rel="stylesheet" href="tools/select2/dist/css/select2.min.css">
 
 <!-- Custom styles for this template -->
 <link href="tools/dashboard.css" rel="stylesheet">

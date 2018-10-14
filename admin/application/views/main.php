@@ -10,7 +10,7 @@
             <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="#">Sign out</a>
+                    <a class="nav-link" href="<?= site_url('login/logout') ?>">Sign out</a>
                 </li>
             </ul>
         </nav>
@@ -36,13 +36,8 @@
                             ?>
                         </ol>
                     </nav>
-                    <!-- Main content -->
-                    <section class="content">
-                        <?php include_once $dir . '/' . $page . '.php'; ?>
-                    </section>
-                    <!-- /.content -->
+                    <?php include_once $dir . '/' . $page . '.php'; ?>
                 </main>
-                <!-- /.content-wrapper -->
             </div>
         </div>
         <?php include_once 'shared/footer.php'; ?>

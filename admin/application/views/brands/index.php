@@ -6,7 +6,7 @@
         </div>
     <?php endif; ?>
     <table class="table table-striped table-sm">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Brand Name</th>
                 <th>Brand Image</th>
@@ -34,13 +34,5 @@
             }
             ?>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Brand Name</th>
-                <th>Brand Image</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </tfoot>
     </table>
 </div>
