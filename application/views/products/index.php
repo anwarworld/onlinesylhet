@@ -46,7 +46,7 @@
                         foreach ($product_list as $product) {
                             ?>
                             <!-- Product Single -->
-                            <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-3 col-xs-3">
                                 <div class="product product-single">
                                     <div class="product-thumb">
                                         <?php if ($product['product_discount'] > 0): ?>

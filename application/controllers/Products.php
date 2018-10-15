@@ -20,7 +20,7 @@ class Products extends CI_Controller {
         $config['uri_segment'] = 3;
         $config['base_url'] = site_url('products/index');
         $config['total_rows'] = $total_rows;
-        $config['per_page'] = 4;
+        $config['per_page'] = 20;
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
         $config['cur_tag_open'] = '<li class="active">';

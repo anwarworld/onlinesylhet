@@ -1725,6 +1725,6 @@ textarea.input {
 
 @media only screen and (max-width: 480px) {
     [class*='col-xs'] {
-        width: 100%;
+        /*width: 100%;*/
     }
 }
