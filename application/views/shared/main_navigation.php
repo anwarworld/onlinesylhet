@@ -9,7 +9,7 @@
                 <ul class="category-list">
                     <?php
                     foreach ($parentCategories as $category):
-                        if (empty($category['childCategories'])):
+                        if (empty($category['subCategories'])):
                             ?>
                             <li><a href="<?= site_url('products/category/' . $category['category_id'] . '/' . Common::encodeMyURL($category['category_name'])) ?>"><?= $category['category_name'] ?></a></li>
                         <?php else:
@@ -17,16 +17,36 @@
                             <li class="dropdown side-dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><?= $category['category_name'] ?> <i class="fa fa-angle-right"></i></a>
                                 <div class="custom-menu">
-                                    <ul class="list-links">
-                                        <li><h3 class="list-links-title">Categories</h3></li>
+                                    <div class="row">
                                         <?php
-                                        foreach ($category['childCategories'] as $childCategory):
-                                            ?>
-                                            <li><a href="<?= site_url('products/category/' . $childCategory['category_id'] . '/' . Common::encodeMyURL($childCategory['category_name'])) ?>"><?= $childCategory['category_name'] ?></a></li>
+                                        foreach ($category['subCategories'] as $subCategory):
+                                            if (!empty($subCategory['childCategories'])):
+                                                ?>
+                                                <div class="col-md-4">
+                                                    <ul class="list-links">
+                                                        <li><h3 class="list-links-title"><?= $subCategory['category_name'] ?></h3></li>
+                                                        <?php
+                                                        foreach ($subCategory['childCategories'] as $childCategory):
+                                                            ?>
+                                                            <li><a href="<?= site_url('products/category/' . $childCategory['category_id'] . '/' . Common::encodeMyURL($childCategory['category_name'])) ?>"><?= $childCategory['category_name'] ?></a></li>
+                                                            <?php
+                                                        endforeach;
+                                                        ?>
+                                                    </ul>
+                                                </div>
+                                            <?php else:
+                                                ?>
+                                                <div class="col-md-4">
+                                                    <ul class="list-links">
+                                                        <li><a href="<?= site_url('products/category/' . $subCategory['category_id'] . '/' . Common::encodeMyURL($subCategory['category_name'])) ?>"><?= $subCategory['category_name'] ?></a></li>
+                                                    </ul>
+                                                </div>
                                             <?php
+                                            endif;
+
                                         endforeach;
                                         ?>
-                                    </ul>
+                                    </div>
                                     <hr class="hidden-md hidden-lg">
                                 </div>
                             </li>

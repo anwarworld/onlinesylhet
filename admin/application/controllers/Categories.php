@@ -60,6 +60,7 @@ class Categories extends CI_Controller {
         $data['page_title'] = 'Categories';
         $data['form_action'] = site_url('categories/add_category');
         $data['parent_cateories'] = $this->categories_mod->getParentCategories();
+        $data['sub_cateories'] = $this->categories_mod->getParentCategories();
         $data['nav_path'] = array(0 => array('title' => 'Categories', 'url' => site_url('categories')), 1 => array('title' => 'Add Category', 'url' => ''));
         $this->load->view('main', $data);
     }
@@ -88,6 +89,7 @@ class Categories extends CI_Controller {
         $data['page'] = 'category_form';
         $data['page_title'] = 'Categories';
         $data['parent_cateories'] = $this->categories_mod->getParentCategories();
+        $data['sub_cateories'] = $this->categories_mod->getSubCategories($data['parent_cat_id']);
         $data['nav_path'] = array(0 => array('title' => 'Categories', 'url' => site_url('categories')), 1 => array('title' => 'Edit Category', 'url' => ''));
         $this->load->view('main', $data);
     }
@@ -103,6 +105,16 @@ class Categories extends CI_Controller {
             $this->session->set_flashdata('msg', 'Something goes to be worng. Please try again!');
         }
         common::redirect();
+    }
+
+    function loadSubCategory() {
+
+        $parent_cat = filter_input(INPUT_POST, 'category');
+        $parent = explode(':', $parent_cat);
+        $data['subcategories'] = $this->categories_mod->getSubCategories($parent[0]);
+        $data['success'] = true;
+
+        echo json_encode($data);
     }
 
 }

@@ -36,16 +36,18 @@
                         if (is_array($rows) && count($rows) > 0) :
                             foreach ($rows as $row) :
                                 ?>
-                                <tr class="text-center">
-                                    <td><?= $row['order_transaction_id'] ?></td>
+                                <tr>
                                     <td>
-                                        <a href="<?= site_url('users/order_details/' . $row['order_id'] . '/' . $row['order_transaction_id']) ?>"><?= $row['user_full_name'] ?></a>
+                                        <a href="<?= site_url('users/order_details/' . $row['order_id'] . '/' . $row['order_transaction_id']) ?>"><?= $row['order_transaction_id'] ?></a>
+                                    </td>
+                                    <td>
+                                        <?= $row['user_full_name'] . '<br />' . $row['user_address'] ?>
                                     </td>
                                     <td><?= $row['order_date'] ?></td>
                                     <td class="price text-center"><strong><?= $row['total_quantity'] ?></strong></td>
                                     <td class="price text-right primary-color"><strong>&#2547; <?= $row['total_amount'] ?></strong></td>
-                                    <td class="total text-center"><?= $row['delivery_name'] ?></td>
-                                    <td class="total text-center"><?= $row['delivery_status'] ?></td>
+                                    <td class="total"><?= $row['man_fullname'] . '<br />' . $row['man_phone'] ?></td>
+                                    <td class="total text-center"><?= Common::getDeliveryStatus($row['delivery_status']) ?></td>
                                 </tr>
                                 <?php
                             endforeach;

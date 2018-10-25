@@ -22,6 +22,7 @@
                 <th>Parent Category</th>
                 <th>Category image</th>
                 <th>Category Name</th>
+                <th>Sort</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
@@ -32,9 +33,18 @@
                 foreach ($rows as $row):
                     ?>
                     <tr>
-                        <td><?= $row['parent_cat_name'] ?></td>
+                        <td>
+                            <?php
+                            if ($row['sub_cat_id'] != 0) {
+                                echo $row['parent_cat_name'] . ' &raquo; ' . $row['sub_cat_name'];
+                            } else {
+                                echo $row['parent_cat_name'];
+                            }
+                            ?>
+                        </td>
                         <td><img src="../uploads/categories/<?= $row['category_image'] ?>" height="50" width="50" alt="<?= $row['category_name'] ?>"/></td>
                         <td><?= $row['category_name'] ?></td>
+                        <td><?= $row['category_sort'] ?></td>
                         <td><?= ($row['category_status'] == 1) ? 'Enabled' : 'Disabled'; ?></td>
                         <td>
                             <a href="<?= site_url('categories/edit_category/' . $row['category_id']) ?>">Edit</a> |  

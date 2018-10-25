@@ -89,6 +89,10 @@ class carts_mod extends CI_Model {
 
     function confirmOrder() {
         $data = Common::getSessionUserData();
+        if ($data['user_id'] == '') {
+            return FALSE;
+        }
+        $data['order_transaction_id'] = uniqid();
         $data['delivery_method'] = $this->session->userdata('delivery_method');
         $data['payment_method'] = $this->session->userdata('delivery_method');
         $data['total_quantity'] = $this->session->userdata('cart_quantity');

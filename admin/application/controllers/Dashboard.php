@@ -9,9 +9,12 @@ class Dashboard extends CI_Controller {
         if (!Common::isLogged()) {
             redirect('login');
         }
+        $this->load->model('dashboard_mod');
     }
 
     public function index() {
+        $data['users'] = $this->dashboard_mod->getNewUsers();
+        $data['orders'] = $this->dashboard_mod->getNewOrders();
         $data['dir'] = 'dashboard';
         $data['page'] = 'index';
         $data['page_title'] = 'Dashboard';

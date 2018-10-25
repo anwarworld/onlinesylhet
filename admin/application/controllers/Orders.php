@@ -40,22 +40,61 @@ class Orders extends CI_Controller {
 //       Pagination End
         $data['dir'] = 'orders';
         $data['page'] = 'index';
+        $data['msg'] = $this->session->flashdata('msg');
+        $data['status_rows'] = $this->orders_mod->getDeliveryStatus();
+        $data['man_rows'] = $this->orders_mod->getDeliveryMan();
         $data['nav_path'] = array(0 => array('title' => 'Orders', 'url' => ''));
         $this->load->view('main', $data);
     }
 
-    public function invoice() {
+    public function invoice($order_id = '') {
+        if ($order_id == '') {
+            $this->session->set_flashdata('msg', 'Something goes to be worng. Please try again!');
+            common::redirect();
+        }
+        $this->load->model('pages_mod');
+        $data = $this->orders_mod->getOrderDetails($order_id);
+
+        if ($data['order_id'] == '') {
+            $this->session->set_flashdata('msg', 'Something goes to be worng. Please try again!');
+            common::redirect();
+        }
+        $data['info'] = $this->pages_mod->getSettings();
         $data['dir'] = 'orders';
         $data['page'] = 'invoice';
-        $data['nav_path'] = array(0 => array('title' => 'Orders', 'url' => ''));
+        $data['nav_path'] = array(array('title' => 'Orders', 'url' => site_url('orders')), array('title' => 'Invoice', 'url' => ''));
         $this->load->view('main', $data);
     }
 
-    public function invoice_print() {
+    public function invoice_print($order_id = '') {
+        if ($order_id == '') {
+            $this->session->set_flashdata('msg', 'Something goes to be worng. Please try again!');
+            common::redirect();
+        }
+        $this->load->model('pages_mod');
+        $data = $this->orders_mod->getOrderDetails($order_id);
+        if ($data['order_id'] == '') {
+            $this->session->set_flashdata('msg', 'Something goes to be worng. Please try again!');
+            common::redirect();
+        }
+        $data['info'] = $this->pages_mod->getSettings();
         $data['dir'] = 'orders';
         $data['page'] = 'invoice_print';
         $data['nav_path'] = array(0 => array('title' => 'Orders', 'url' => ''));
-        $this->load->view('main', $data);
+        $this->load->view('orders/invoice_print', $data);
+    }
+
+    public function updateOrder() {
+        $data['success'] = false;
+        if ($this->form_validation->run('valid_order_update')) {
+            if ($this->orders_mod->updateDeliveryOption()) {
+                $data['success'] = true;
+                $data['redirect_url'] = site_url('orders');
+                $this->session->set_flashdata('msg', 'Order Delivery Status updated Successfully!');
+            }
+        }
+        header('Content-Type: application/json');
+        echo json_encode($data);
     }
 
 }

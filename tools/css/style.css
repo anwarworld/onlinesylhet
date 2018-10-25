@@ -1,177 +1,37 @@
-/*
-Template Name: E-SHOP HTML E-Commerce Template
-Author: yaminncco
-
-Colors:
-        Body 		  : #4A4E5A
-        Headers 	: #30323A
-        Primary 	: #F8694A
-        Dark 		  :	#30323A
-        Grey 		  : #DADADA #F6F7F8
-
-Fonts: Hind
-
-Table OF Contents
-------------------------------------
-1 > GENERAL
------- typography
------- Buttons
------- Inputs
------- Lists
------- Sections
------- Breadcrumb
-2 > HEADER
------- Top header
------- Logo
------- Search header
------- Account header
------- Cart header
-3 > NAVIGATION
------- Category nav
------- Menu nav
------- Dropdowns
------- Mobile Nav
-4 > BANNERS
-5 > HOME SLIDER
-6 > PRODUCT
------- Single product
------- Widget product
------- Product slick
-7 > PRODUCTS PAGE
------- Aside
------- Store
-8 > PRODUCT DETAILS PAGE
------- Product view
------- Product details
------- Product tab
-9 > CHECKOUT PAGE
-10 > FOOTER
-11 > SLICK
------- Arrows
------- Dots
-12 > RESPONSIVE
-------------------------------------*/
-
-/*=========================================================
-        01 -> GENERAL
-===========================================================*/
-
 /*----------------------------*\
         Typography
 \*----------------------------*/
 
-body {
-    font-family: 'Hind', sans-serif;
-    color: #4A4E5A;
-    overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #30323A;
-    margin: 0 0 10px;
-    font-weight: 700;
-}
-
-a {
-    color: #30323A;
-    -webkit-transition: 0.3s color;
-    transition: 0.3s color;
-}
-
-a:hover, a:focus {
-    color: #F8694A;
-    text-decoration: none;
-    outline: none;
-}
-
-.primary-color {
-    color: #F8694A;
-}
-
-.white-color {
-    color: #FFF;
-}
-
-.font-weak {
-    font-weight: 400;
-}
-
-strong {
-    color: #30323A;
-}
-
-ul, ol {
-    margin: 0;
-    padding: 0;
-    list-style: none
-}
-
-hr {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-color: #DADADA;
-}
+body {font-family: 'Hind', sans-serif;color: #4A4E5A;overflow-x: hidden;}
+h1, h2, h3, h4, h5, h6 {color: #30323A;margin: 0 0 10px;font-weight: 700;}
+a {color: #30323A;-webkit-transition: 0.3s color;transition: 0.3s color;}
+a:hover, a:focus {color: #F8694A;text-decoration: none;outline: none;}
+.primary-color {color: #F8694A;}
+.white-color {color: #FFF;}
+.font-weak {font-weight: 400;}
+strong {color: #30323A;}
+ul, ol {margin: 0;padding: 0;list-style: none}
+hr {margin-top: 15px;margin-bottom: 15px;border-color: #DADADA;}
 
 /*----------------------------*\
         Buttons
 \*----------------------------*/
-
-.main-btn, .primary-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: none;
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
-}
-
-.icon-btn.main-btn, .icon-btn.primary-btn {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    padding: 0px;
-    border: none;
-}
-
-.main-btn {
-    color: #30323A;
-    background-color: #FFF;
-    -webkit-box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 6px transparent;
-    box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 6px transparent;
-}
-
-.main-btn:hover, .main-btn:focus {
-    color: #F8694A;
-    -webkit-box-shadow: 0px 0px 0px 1px #F8694A inset, 0px 0px 0px 0px #F8694A;
-    box-shadow: 0px 0px 0px 1px #F8694A inset, 0px 0px 0px 0px #F8694A;
-}
-
-.primary-btn {
-    color: #FFF;
-    background-color: #F8694A;
-}
-
-.primary-btn:hover, .primary-btn:focus {
-    color: #FFF;
-    background-color: #30323A;
-}
-
+.main-btn, .primary-btn {display: inline-block;padding: 10px 15px;text-transform: uppercase;font-weight: 700;border: none;-webkit-transition: 0.3s all; transition: 0.3s all;}
+.icon-btn.main-btn, .icon-btn.primary-btn {width: 40px;height: 40px;line-height: 40px;text-align: center;padding: 0px; border: none;}
+.main-btn {color: #30323A;background-color: #FFF;-webkit-box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 6px transparent;box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 6px transparent;}
+.main-btn:hover, .main-btn:focus {color: #F8694A;-webkit-box-shadow: 0px 0px 0px 1px #F8694A inset, 0px 0px 0px 0px #F8694A;box-shadow: 0px 0px 0px 1px #F8694A inset, 0px 0px 0px 0px #F8694A;}
+.primary-btn {color: #FFF; background-color: #F8694A;}
+.primary-btn:hover, .primary-btn:focus {color: #FFF;background-color: #30323A;}
 /*----------------------------*\
         Inputs
 \*----------------------------*/
-
-.input {
-    width: 100%;
-    height: 40px;
-    padding: 0px 15px;
-    border: none;
-    background-color: transparent;
-    -webkit-box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 5px transparent;
-    box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 5px transparent;
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
+.input {width: 100%;height: 40px;padding: 0px 15px;
+        border: none;
+        background-color: transparent;
+        -webkit-box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 5px transparent;
+        box-shadow: 0px 0px 0px 1px #DADADA inset, 0px 0px 0px 5px transparent;
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all;
 }
 
 .input:focus {
@@ -203,7 +63,7 @@ textarea.input {
 \*----------------------------*/
 
 .list-links .list-links-title {
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-bottom: 10px;
     font-size: 16px;
 }
@@ -211,7 +71,7 @@ textarea.input {
 .list-links li>a {
     position: relative;
     display: inline-block;
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding: 2px 0px;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
@@ -441,7 +301,7 @@ textarea.input {
 }
 
 .header-cart.dropdown .custom-menu {
-    width: 300px;
+    width: 350px;
 }
 
 #shopping-cart .shopping-cart-list {
@@ -486,7 +346,7 @@ textarea.input {
 .category-nav .category-header {
     padding: 15px;
     display: block;
-    text-transform: uppercase;
+    text-transform: capitalize;
     background: #F8694A;
     color: #FFF;
     font-weight: 700;
@@ -537,7 +397,7 @@ textarea.input {
 .category-nav .category-list>li>a {
     display: block;
     padding: 15px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .category-nav .category-list>li>a:hover, .category-nav .category-list>li>a:focus, .category-nav .category-list>li.dropdown.open>a {
@@ -570,7 +430,7 @@ textarea.input {
     display: block;
     padding: 15px;
     color: #FFF;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .menu-nav .menu-list>li>a:hover, .menu-nav .menu-list>li>a:focus, .menu-nav .menu-list>li.dropdown.open>a {
@@ -620,7 +480,7 @@ textarea.input {
 .dropdown.default-dropdown>.custom-menu>li>a {
     display: block;
     padding: 10px 0px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 /*-- Mega Dropdown --*/
@@ -656,7 +516,7 @@ textarea.input {
     border-left: 2px solid #F8694A;
     left: 100%;
     top: 0;
-    width: 250px;
+    width: 750px;
     -webkit-transform: translate(15px, 0px);
     -ms-transform: translate(15px, 0px);
     transform: translate(15px, 0px);

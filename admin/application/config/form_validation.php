@@ -65,7 +65,18 @@ $config = array(
         array('field' => 'method_fee', 'label' => 'Method Name', 'rules' => 'required'),
         array('field' => 'method_min_amount', 'label' => 'Min. Shopping Amunt', 'rules' => 'required'),
         array('field' => 'method_des', 'label' => 'Method Details', 'rules' => ''),
-        array('field' => 'method_status', 'label' => 'Method Status', 'rules' => ''),
+        array('field' => 'method_status', 'label' => 'Method Status', 'rules' => '')
+    ),
+    'valid_delivery_man' => array(
+        array('field' => 'man_fullname', 'label' => 'Full Name', 'rules' => 'required'),
+        array('field' => 'man_phone', 'label' => 'Phone', 'rules' => 'required'),
+        array('field' => 'man_address', 'label' => 'Address', 'rules' => 'required'),
+        array('field' => 'method_status', 'label' => 'Status', 'rules' => '')
+    ),
+    'valid_order_update' => array(
+        array('field' => 'delivery_status', 'label' => 'Delivery', 'rules' => 'required'),
+        array('field' => 'delivery_man', 'label' => 'Phone', 'rules' => 'required'),
+        array('field' => 'order_id', 'label' => 'Order', 'rules' => 'required')
     ),
     ///
     'valid_sale' => array(

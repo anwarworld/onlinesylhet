@@ -36,7 +36,7 @@ class users_mod extends CI_Model {
     function getAllOrders($start, $perPage) {
         $limit_sql = ' limit ' . $start . ',' . $perPage;
         $user_id = $this->session->userdata('user_id');
-        $sql = "SELECT order_id,user_full_name,user_address,user_phone,order_date,total_quantity,total_amount,order_date,delivery_status,delivery_user_name FROM orders WHERE user_id = ? $limit_sql";
+        $sql = "SELECT order_id,order_transaction_id,user_full_name,user_address,user_phone,order_date,total_quantity,total_amount,order_date,delivery_status,man_fullname,man_phone FROM orders WHERE user_id = ? $limit_sql";
         $query = $this->db->query($sql, array($user_id));
         return $query->result_array();
     }

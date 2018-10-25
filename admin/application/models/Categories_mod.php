@@ -31,7 +31,12 @@ class categories_mod extends CI_Model {
     function saveCategory() {
         $parent_cat = filter_input(INPUT_POST, 'parent_cat');
         $parent = explode(':', $parent_cat);
+
+        $sub_cat = filter_input(INPUT_POST, 'sub_cat');
+        $sub = explode(':', $sub_cat);
+
         $category_name = filter_input(INPUT_POST, 'category_name');
+        $category_sort = filter_input(INPUT_POST, 'category_sort');
         $category_status = filter_input(INPUT_POST, 'category_status');
         if ($_FILES['image']['name'] != '') {
             $category_image = $this->addImage();
@@ -41,7 +46,10 @@ class categories_mod extends CI_Model {
         $data = array(
             'parent_cat_id' => $parent[0],
             'parent_cat_name' => $parent[1],
+            'sub_cat_id' => $sub[0],
+            'sub_cat_name' => $sub[1],
             'category_name' => $category_name,
+            'category_sort' => $category_sort,
             'category_image' => $category_image,
             'category_status' => $category_status
         );
@@ -50,6 +58,11 @@ class categories_mod extends CI_Model {
 
     function getParentCategories() {
         $query = $this->db->query("select category_id,category_name from categories where parent_cat_id=0");
+        return $query->result_array();
+    }
+
+    function getSubCategories($parent_category_id = '') {
+        $query = $this->db->query("select category_id,category_name from categories where parent_cat_id=$parent_category_id AND sub_cat_id=0");
         return $query->result_array();
     }
 
@@ -93,8 +106,13 @@ class categories_mod extends CI_Model {
     function updateCategory() {
         $category_id = $this->session->userdata('category_id');
         $parent_cat = filter_input(INPUT_POST, 'parent_cat');
+
+        $sub_cat = filter_input(INPUT_POST, 'sub_cat');
+        $sub = explode(':', $sub_cat);
+
         $parent = explode(':', $parent_cat);
         $category_name = filter_input(INPUT_POST, 'category_name');
+        $category_sort = filter_input(INPUT_POST, 'category_sort');
         $category_status = filter_input(INPUT_POST, 'category_status');
 
         if ($_FILES['image']['name'] != '') {
@@ -106,7 +124,10 @@ class categories_mod extends CI_Model {
         $data = array(
             'parent_cat_id' => $parent[0],
             'parent_cat_name' => $parent[1],
+            'sub_cat_id' => $sub[0],
+            'sub_cat_name' => $sub[1],
             'category_name' => $category_name,
+            'category_sort' => $category_sort,
             'category_image' => $category_image,
             'category_status' => $category_status
         );

@@ -23,16 +23,22 @@ class Common {
 
     public static function getCategories() {
         $CI = & get_instance();
-        $sql = "SELECT category_id,category_name,parent_cat_id,category_image FROM categories WHERE category_status = ?";
+        $sql = "SELECT category_id,category_name,parent_cat_id,category_image,sub_cat_id FROM categories WHERE category_status = ? order by category_id asc";
         $query = $CI->db->query($sql, array(1));
         $rows = $query->result_array();
         $data = array();
         foreach ($rows as $row) {
             if ($row['parent_cat_id'] == 0) {
                 $data[$row['category_id']] = $row;
+            } else if ($row['sub_cat_id'] == 0) {
+                $temp = $data[$row['parent_cat_id']];
+                $temp['subCategories'][$row['category_id']] = $row;
+                $data[$row['parent_cat_id']] = $temp;
             } else {
                 $temp = $data[$row['parent_cat_id']];
-                $temp['childCategories'][] = $row;
+                $subCat = $temp['subCategories'][$row['sub_cat_id']];
+                $subCat['childCategories'][] = $row;
+                $temp['subCategories'][$row['sub_cat_id']] = $subCat;
                 $data[$row['parent_cat_id']] = $temp;
             }
         }
@@ -155,6 +161,24 @@ class Common {
             $data['user_address'] = $CI->session->userdata('user_address');
         }
 
+        return $data;
+    }
+
+    public static function getDeliveryStatus($status = -1) {
+
+        $data = array(
+            0 => 'Order Posted',
+            1 => 'Order Received',
+            2 => 'Now Packaging',
+            3 => 'Packaging Completed',
+            4 => 'Delivery Man Assigned',
+            5 => 'Delivering...now',
+            6 => 'Delivery Completed'
+        );
+
+        if ($status >= 0 && $status < 7) {
+            return $data[$status];
+        }
         return $data;
     }
 

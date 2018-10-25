@@ -42,6 +42,7 @@
         <li class="nav-item"><a class="nav-link" href="<?= site_url('categories') ?>"><span data-feather="circle"></span>Category</a></li>
         <li class="nav-item"><a class="nav-link" href="<?= site_url('payments') ?>"><span data-feather="circle"></span>Payments Method</a></li>
         <li class="nav-item"><a class="nav-link" href="<?= site_url('delivery') ?>"><span data-feather="circle"></span>Delivery Method</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?= site_url('delivery/man') ?>"><span data-feather="circle"></span>Delivery Man</a></li>
     </ul>
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
         <span>Web Configuration</span>

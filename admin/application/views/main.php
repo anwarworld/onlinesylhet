@@ -20,22 +20,22 @@
                     <?php include_once 'shared/left_navigation.php'; ?>
                 </nav>
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <?php
-                            if (isset($nav_path)) {
-                                foreach ($nav_path as $nav) {
-                                    if ($nav['url'] != '') {
-                                        echo '<li class="breadcrumb-item"><a href="' . $nav['url'] . '">' . $nav['title'] . '</a></li>';
-                                    } else {
-                                        echo '<li class="breadcrumb-item active">' . $nav['title'] . '</li>';
+                    <?php if (isset($nav_path)): ?>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <?php
+                                    foreach ($nav_path as $nav) {
+                                        if ($nav['url'] != '') {
+                                            echo '<li class="breadcrumb-item"><a href="' . $nav['url'] . '">' . $nav['title'] . '</a></li>';
+                                        } else {
+                                            echo '<li class="breadcrumb-item active">' . $nav['title'] . '</li>';
+                                        }
                                     }
-                                }
-                            }
-                            ?>
-                        </ol>
-                    </nav>
+                                    ?>
+                            </ol>
+                        </nav>
+                    <?php endif; ?>
                     <?php include_once $dir . '/' . $page . '.php'; ?>
                 </main>
             </div>

@@ -1,5 +1,5 @@
 <div class="float-sm-left">
-    <a href="<?= site_url('delivery/add_delivery') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Delivery Method</a>
+    <a href="<?= site_url('delivery/add_method') ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add Delivery Method</a>
 </div>
 <div class="float-sm-right">
     <nav aria-label="DeliveryMethod" >
@@ -41,8 +41,8 @@
                         <td><img src="../uploads/delivery/<?= $row['method_image'] ?>" height="50" width="50" alt="<?= $row['method_name'] ?>"/></td>
                         <td><?= ($row['method_status'] == 1) ? 'Enabled' : 'Disabled'; ?></td>
                         <td>
-                            <a href="<?= site_url('delivery/edit_delivery/' . $row['method_id']) ?>">Edit</a> |  
-                            <a href="<?= site_url('delivery/delete_delivery/' . $row['method_id']) ?>" onclick="return confirm('Are you sure to delete this delivery?')" >Delete</a>
+                            <a href="<?= site_url('delivery/edit_method/' . $row['method_id']) ?>">Edit</a> |  
+                            <a href="<?= site_url('delivery/delete_method/' . $row['method_id']) ?>" onclick="return confirm('Are you sure to delete this delivery?')" >Delete</a>
 
                         </td>
                     </tr>

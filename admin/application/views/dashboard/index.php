@@ -11,134 +11,85 @@
         </button>
     </div>
 </div>
-
-<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-<h2>Section title</h2>
-<div class="table-responsive">
-    <table class="table table-striped table-sm">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>sit</td>
-            </tr>
-            <tr>
-                <td>1,002</td>
-                <td>amet</td>
-                <td>consectetur</td>
-                <td>adipiscing</td>
-                <td>elit</td>
-            </tr>
-            <tr>
-                <td>1,003</td>
-                <td>Integer</td>
-                <td>nec</td>
-                <td>odio</td>
-                <td>Praesent</td>
-            </tr>
-            <tr>
-                <td>1,003</td>
-                <td>libero</td>
-                <td>Sed</td>
-                <td>cursus</td>
-                <td>ante</td>
-            </tr>
-            <tr>
-                <td>1,004</td>
-                <td>dapibus</td>
-                <td>diam</td>
-                <td>Sed</td>
-                <td>nisi</td>
-            </tr>
-            <tr>
-                <td>1,005</td>
-                <td>Nulla</td>
-                <td>quis</td>
-                <td>sem</td>
-                <td>at</td>
-            </tr>
-            <tr>
-                <td>1,006</td>
-                <td>nibh</td>
-                <td>elementum</td>
-                <td>imperdiet</td>
-                <td>Duis</td>
-            </tr>
-            <tr>
-                <td>1,007</td>
-                <td>sagittis</td>
-                <td>ipsum</td>
-                <td>Praesent</td>
-                <td>mauris</td>
-            </tr>
-            <tr>
-                <td>1,008</td>
-                <td>Fusce</td>
-                <td>nec</td>
-                <td>tellus</td>
-                <td>sed</td>
-            </tr>
-            <tr>
-                <td>1,009</td>
-                <td>augue</td>
-                <td>semper</td>
-                <td>porta</td>
-                <td>Mauris</td>
-            </tr>
-            <tr>
-                <td>1,010</td>
-                <td>massa</td>
-                <td>Vestibulum</td>
-                <td>lacinia</td>
-                <td>arcu</td>
-            </tr>
-            <tr>
-                <td>1,011</td>
-                <td>eget</td>
-                <td>nulla</td>
-                <td>Class</td>
-                <td>aptent</td>
-            </tr>
-            <tr>
-                <td>1,012</td>
-                <td>taciti</td>
-                <td>sociosqu</td>
-                <td>ad</td>
-                <td>litora</td>
-            </tr>
-            <tr>
-                <td>1,013</td>
-                <td>torquent</td>
-                <td>per</td>
-                <td>conubia</td>
-                <td>nostra</td>
-            </tr>
-            <tr>
-                <td>1,014</td>
-                <td>per</td>
-                <td>inceptos</td>
-                <td>himenaeos</td>
-                <td>Curabitur</td>
-            </tr>
-            <tr>
-                <td>1,015</td>
-                <td>sodales</td>
-                <td>ligula</td>
-                <td>in</td>
-                <td>libero</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-md-12">
+        <h4>New Orders</h4>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>#Quantity</th>
+                        <th>#Amount</th>
+                        <th>Order Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (isset($orders)) {
+                        foreach ($orders as $row):
+                            ?>
+                            <tr>
+                                <td><?= $row['order_id'] ?></td>
+                                <td><?= $row['user_full_name'] ?></td>
+                                <td><?= $row['user_phone'] ?></td>
+                                <td><?= nl2br($row['user_address']) ?></td>
+                                <td><?= $row['order_date'] ?></td>
+                                <td class="text-center"><?= $row['total_quantity'] ?></td>
+                                <td class="text-right">&#2547; <?= $row['total_amount'] ?></td>
+                                <td><?= ($row['order_status'] == 1) ? 'Enabled' : 'Disabled'; ?></td>
+                                <td>
+                                    <a href="<?= site_url('orders/delivery/' . $row['order_id']) ?>"> Add Delivery</a> | 
+                                    <a href="<?= site_url('orders/invoice/' . $row['order_id']) ?>">Invoice</a> 
+                                </td>
+                            </tr>
+                            <?php
+                        endforeach;
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h4>New Members</h4>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (isset($users)) {
+                        foreach ($users as $row):
+                            ?>
+                            <tr>
+                                <td><?= $row['user_full_name'] ?></td>
+                                <td><?= $row['user_email'] ?></td>
+                                <td><?= $row['user_phone'] ?></td>
+                                <td>
+                                    <a href="<?= site_url('users/edit_user/' . $row['user_id']) ?>">Edit</a> |  
+                                    <a href="<?= site_url('users/delete_user/' . $row['user_id']) ?>" onclick="return confirm('Are you sure to delete this user?')" >Delete</a>
+                                </td>
+                            </tr>
+                            <?php
+                        endforeach;
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

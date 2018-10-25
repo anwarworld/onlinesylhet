@@ -17,10 +17,32 @@
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
+                <label class="input-group-text" for="subCategory">Sub Category</label>
+            </div>
+            <select name="sub_cat" class="form-control select2" id="subCategory">
+                <option  value="0:No Sub Category">No Sub Category</option>
+                <?php
+                foreach ($sub_cateories as $row):
+                    ?>
+                    <option <?php echo ($row['category_id'] == $parent_cat_id) ? 'selected="selected"' : ''; ?> value="<?= $row['category_id'] . ':' . $row['category_name'] ?>"><?= $row['category_name'] ?></option>
+                    <?php
+                endforeach;
+                ?>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
                 <span class="input-group-text"  for="categoryName">Category Name</span>
             </div>
             <input type="input" name="category_name" class="form-control" id="categoryName" value="<?= $category_name ?>" placeholder="Enter Category Name">
             <?= form_error('category_name', '<span class="bg-red-active">', '</span>') ?>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"  for="categorySort">Sort Value</span>
+            </div>
+            <input type="input" name="category_sort" class="form-control" id="categorySort" value="<?= $category_sort ?>" placeholder="Enter Sort Value">
+            <?= form_error('category_sort', '<span class="bg-red-active">', '</span>') ?>
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
