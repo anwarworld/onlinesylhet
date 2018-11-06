@@ -165,4 +165,19 @@ class Products extends CI_Controller {
         echo json_encode($data);
     }
 
+    public function getProducts($start = 0, $limit = 10) {
+        $data = $this->products_mod->getAllProducts(true, $start, $limit);
+        echo json_encode($data);
+    }
+
+    public function offers($start = 0, $limit = 10) {
+        $data = $this->products_mod->getProductsBySales($start, $limit);
+        echo json_encode($data);
+    }
+
+    public function categoryProducts($category_id, $start = 0, $limit = 10) {
+        $data = $this->products_mod->getCategoryProducts($category_id, $start, $limit);
+        echo json_encode($data);
+    }
+
 }

@@ -116,7 +116,7 @@
                                             <span class="sale">-<?= $product['product_discount'] ?>%</span>
                                         </div>
                                     <?php endif; ?>
-                                    <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
+                                    <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-price">&#2547; <?= $product['product_price'] . ' ' . $product['product_price_unit'] ?>
@@ -140,8 +140,8 @@
                                     </div>
                                     <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                                     <div class="product-btns">
-                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+    <!--                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
                                         <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@
                                 <span class="sale">-<?= $product['product_discount'] ?>%</span>
                             </div>
                         <?php endif; ?>
-                        <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
+                        <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                     </div>
                     <div class="product-body">
                         <h3 class="product-price">&#2547; <?= $product['product_price'] . ' ' . $product['product_price_unit'] ?>
@@ -206,8 +206,8 @@
                         </div>
                         <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                         <div class="product-btns">
-                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+<!--                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
                             <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                         </div>
                     </div>
@@ -229,7 +229,7 @@
                                             <span class="sale">-<?= $product['product_discount'] ?>%</span>
                                         </div>
                                     <?php endif; ?>
-                                    <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
+                                    <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-price">&#2547; <?= $product['product_price'] . ' ' . $product['product_price_unit'] ?>
@@ -253,8 +253,8 @@
                                     </div>
                                     <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                                     <div class="product-btns">
-                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+    <!--                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
                                         <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                                     </div>
                                 </div>
@@ -293,7 +293,7 @@
                     <div class="product product-single">
                         <div class="product-thumb">
                             <!--<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>-->
-                            <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
+                            <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                         </div>
                         <div class="product-body">
                             <h3 class="product-price">&#2547; <?= $product['product_price'] ?> <?= $product['product_price_unit'] ?>
@@ -317,8 +317,8 @@
                             </div>
                             <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                             <div class="product-btns">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+    <!--                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
                                 <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                             </div>
                         </div>

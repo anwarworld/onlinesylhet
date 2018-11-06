@@ -5,7 +5,7 @@
         <!-- row -->
         <div class="row">
             <!-- footer widget -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6 mobile-display">
                 <div class="footer">
                     <!-- footer logo -->
                     <div class="footer-logo">
@@ -27,7 +27,7 @@
             <!-- /footer widget -->
 
             <!-- footer widget -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6  mobile-display">
                 <div class="footer">
                     <h3 class="footer-header">My Account</h3>
                     <ul class="list-links">
@@ -41,7 +41,7 @@
             <!-- /footer widget -->
             <div class="clearfix visible-sm visible-xs"></div>
             <!-- footer widget -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6  mobile-display">
                 <div class="footer">
 
                     <h3 class="footer-header">Customer Service</h3>
@@ -60,7 +60,7 @@
             <!-- /footer widget -->
 
             <!-- footer subscribe -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6  mobile-display">
                 <div class="footer">
                     <h3 class="footer-header">Stay Connected</h3>
                     <p><?= nl2br($webSettings['newsletter']) ?></p>
@@ -78,7 +78,7 @@
         <hr>
         <!-- row -->
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="col-md-8 col-md-offset-2 text-center  mobile-display">
                 <!-- footer copyright -->
                 <div class="footer-copyright">
                     Copyright &copy; <?= Date('Y') ?> All rights reserved by OnlineSylhet.com

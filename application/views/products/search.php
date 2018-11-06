@@ -4,30 +4,10 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <!-- ASIDE -->
-            <div id="aside" class="col-md-3"> 
-                <?php include_once 'side_bar.php'; ?>
-            </div>
-            <!-- /ASIDE -->
             <!-- MAIN -->
-            <div id="main" class="col-md-9">
+            <div id="main" class="col-md-12">
                 <!-- store top filter -->
                 <div class="store-filter clearfix">
-                    <div class="pull-left">
-                        <div class="row-filter">
-                            <a href="#"><i class="fa fa-th-large"></i></a>
-                            <a href="#" class="active"><i class="fa fa-bars"></i></a>
-                        </div>
-                        <div class="sort-filter">
-                            <span class="text-uppercase">Sort By:</span>
-                            <select class="input">
-                                <option value="0">Position</option>
-                                <option value="0">Price</option>
-                                <option value="0">Rating</option>
-                            </select>
-                            <a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
-                        </div>
-                    </div>
                     <div class="pull-right">
                         <ul class="store-pages text-uppercase">
                             <?= $pagination_links; ?>
@@ -35,7 +15,6 @@
                     </div>
                 </div>
                 <!-- /store top filter -->
-
                 <!-- STORE -->
                 <div id="store">
                     <!-- row -->
@@ -53,7 +32,7 @@
                                                 <span class="sale">-<?= $product['product_discount'] ?>%</span>
                                             </div>
                                         <?php endif; ?>
-                                        <img src="uploads/products/<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
+                                        <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                     </div>
                                     <div class="product-body">
                                         <h4 class="product-price">&#2547; <?= $product['product_price'] ?> <?= $product['product_price_unit'] ?> 
@@ -99,21 +78,6 @@
 
                 <!-- store bottom filter -->
                 <div class="store-filter clearfix">
-                    <div class="pull-left">
-                        <div class="row-filter">
-                            <a href="#"><i class="fa fa-th-large"></i></a>
-                            <a href="#" class="active"><i class="fa fa-bars"></i></a>
-                        </div>
-                        <div class="sort-filter">
-                            <span class="text-uppercase">Sort By:</span>
-                            <select class="input">
-                                <option value="0">Position</option>
-                                <option value="0">Price</option>
-                                <option value="0">Rating</option>
-                            </select>
-                            <a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
-                        </div>
-                    </div>
                     <div class="pull-right">
                         <ul class="store-pages text-uppercase">
                             <?= $pagination_links; ?>

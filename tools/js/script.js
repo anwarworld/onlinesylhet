@@ -2,6 +2,15 @@ $j(document).ready(function() {
     carts.init();
     productReview.init();
     users.init();
+    $j(window).scroll(function() {
+        if ($j(window).scrollTop() + $j(window).innerHeight() >= $j(window)[0].scrollHeight) {
+            alert('end reached');
+        }
+    });
+    $j('#store').on('scroll', function() {
+        alert('store');
+
+    })
 });
 var users = {
     init: function() {

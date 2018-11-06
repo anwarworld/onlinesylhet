@@ -18,7 +18,7 @@ $pickForYou = Common::getPickedForYou();
             foreach ($pickForYou as $product):
                 ?>
                 <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="col-md-2 col-sm-6 col-xs-6">
                     <div class="product product-single">
                         <div class="product-thumb">
                             <?php if ($product['product_discount'] > 0): ?>
@@ -50,8 +50,8 @@ $pickForYou = Common::getPickedForYou();
                             </div>
                             <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                             <div class="product-btns">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+<!--                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
                                 <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                             </div>
                         </div>
