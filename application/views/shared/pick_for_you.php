@@ -29,14 +29,17 @@ $pickForYou = Common::getPickedForYou();
                             <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_image'] ?>">
                         </div>
                         <div class="product-body">
-                            <h4 class="product-price">&#2547; <?= $product['product_price'] ?> <?= $product['product_price_unit'] ?> 
+                            <h3 class="product-price">&#2547; <?= $product['product_price'] ?>
                                 <?php if ($product['product_discount'] > 0): ?>
                                     <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
                                 <?php endif; ?>
-                            </h4>
-                            <div class="product-rating">
-                                <?php
-                                if ($product['product_number_rating'] > 0) :
+                            </h3>
+                            <span> <?= $product['product_price_unit'] ?></span>
+                            <?php
+                            if ($product['product_number_rating'] > 0) :
+                                ?>
+                                <div class="product-rating">
+                                    <?php
                                     $rating = $product['product_total_rating'] / $product['product_number_rating'];
                                     for ($i = 0; $i < 5; $i++):
                                         if ($i < $rating) {
@@ -45,9 +48,11 @@ $pickForYou = Common::getPickedForYou();
                                             echo '<i class="fa fa-star-o empty"></i>';
                                         }
                                     endfor;
-                                endif;
-                                ?>
-                            </div>
+                                    ?>
+                                </div>
+                                <?php
+                            endif;
+                            ?>
                             <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                             <div class="product-btns">
 <!--                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>

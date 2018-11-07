@@ -4,7 +4,7 @@
     <div class="container">
         <?php
         foreach ($parentCategories as $category):
-            if (!empty($category['childCategories'])):
+            if (!empty($category['subCategories'])):
                 ?>
                 <div class="row">
                     <!-- section title -->
@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <?php
-                    foreach ($category['childCategories'] as $subCategory):
+                    foreach ($category['subCategories'] as $subCategory):
                         ?>
                         <!-- section title -->
                         <div class="col-md-3 col-sm-6 col-xs-6">

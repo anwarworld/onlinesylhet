@@ -90,25 +90,13 @@
                 </div>
             </div>
             <!-- /section-title -->
-
-            <!-- banner -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="banner banner-2">
-                    <img src="images/banner14.jpg" alt="">
-                    <div class="banner-caption">
-                        <h2 class="white-color">NEW<br>COLLECTION</h2>
-                        <button class="primary-btn">Shop Now</button>
-                    </div>
-                </div>
-            </div>
-            <!-- /banner -->
             <!-- Product Slick -->
-            <div class="col-md-9 col-sm-6 col-xs-6">
+            <div class="col-md-12 col-sm-6 col-xs-6">
                 <div class="row">
                     <?php foreach ($featured_producs as $product):
                         ?>
                         <!-- Product Single -->
-                        <div class="col-md-4 col-sm-6 col-xs-6">
+                        <div class="col-md-3 col-sm-6 col-xs-6">
                             <div class="product product-single">
                                 <div class="product-thumb">
                                     <?php if ($product['product_discount'] > 0): ?>
@@ -119,14 +107,17 @@
                                     <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">&#2547; <?= $product['product_price'] . ' ' . $product['product_price_unit'] ?>
+                                    <h3 class="product-price">&#2547; <?= $product['product_price'] ?>
                                         <?php if ($product['product_discount'] > 0): ?>
                                             <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
                                         <?php endif; ?>
                                     </h3>
-                                    <div class="product-rating">
-                                        <?php
-                                        if ($product['product_number_rating'] > 0) :
+                                    <span><?= $product['product_price_unit'] ?></span>
+                                    <?php
+                                    if ($product['product_number_rating'] > 0) :
+                                        ?>
+                                        <div class="product-rating">
+                                            <?php
                                             $rating = $product['product_total_rating'] / $product['product_number_rating'];
                                             for ($i = 0; $i < 5; $i++):
                                                 if ($i < $rating) {
@@ -135,9 +126,11 @@
                                                     echo '<i class="fa fa-star-o empty"></i>';
                                                 }
                                             endfor;
-                                        endif;
-                                        ?>
-                                    </div>
+                                            ?>
+                                        </div>
+                                        <?php
+                                    endif;
+                                    ?>
                                     <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                                     <div class="product-btns">
     <!--                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
@@ -185,14 +178,17 @@
                         <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                     </div>
                     <div class="product-body">
-                        <h3 class="product-price">&#2547; <?= $product['product_price'] . ' ' . $product['product_price_unit'] ?>
+                        <h3 class="product-price">&#2547; <?= $product['product_price'] ?>
                             <?php if ($product['product_discount'] > 0): ?>
                                 <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
                             <?php endif; ?>
                         </h3>
-                        <div class="product-rating">
-                            <?php
-                            if ($product['product_number_rating'] > 0) :
+                        <span><?= $product['product_price_unit'] ?></span>
+                        <?php
+                        if ($product['product_number_rating'] > 0) :
+                            ?>
+                            <div class="product-rating">
+                                <?php
                                 $rating = $product['product_total_rating'] / $product['product_number_rating'];
                                 for ($i = 0; $i < 5; $i++):
                                     if ($i < $rating) {
@@ -201,9 +197,11 @@
                                         echo '<i class="fa fa-star-o empty"></i>';
                                     }
                                 endfor;
-                            endif;
-                            ?>
-                        </div>
+                                ?>
+                            </div>
+                            <?php
+                        endif;
+                        ?>
                         <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                         <div class="product-btns">
 <!--                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
@@ -232,14 +230,17 @@
                                     <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-price">&#2547; <?= $product['product_price'] . ' ' . $product['product_price_unit'] ?>
+                                    <h3 class="product-price">&#2547; <?= $product['product_price'] ?>
                                         <?php if ($product['product_discount'] > 0): ?>
                                             <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
                                         <?php endif; ?>
                                     </h3>
-                                    <div class="product-rating">
-                                        <?php
-                                        if ($product['product_number_rating'] > 0) :
+                                    <span><?= $product['product_price_unit'] ?></span>
+                                    <?php
+                                    if ($product['product_number_rating'] > 0) :
+                                        ?>
+                                        <div class="product-rating">
+                                            <?php
                                             $rating = $product['product_total_rating'] / $product['product_number_rating'];
                                             for ($i = 0; $i < 5; $i++):
                                                 if ($i < $rating) {
@@ -248,9 +249,11 @@
                                                     echo '<i class="fa fa-star-o empty"></i>';
                                                 }
                                             endfor;
-                                        endif;
-                                        ?>
-                                    </div>
+                                            ?>
+                                        </div>
+                                        <?php
+                                    endif;
+                                    ?>
                                     <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                                     <div class="product-btns">
     <!--                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
@@ -296,14 +299,17 @@
                             <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                         </div>
                         <div class="product-body">
-                            <h3 class="product-price">&#2547; <?= $product['product_price'] ?> <?= $product['product_price_unit'] ?>
+                            <h3 class="product-price">&#2547; <?= $product['product_price'] ?>
                                 <?php if ($product['product_discount'] > 0): ?>
                                     <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
                                 <?php endif; ?>
                             </h3>
-                            <div class="product-rating">
-                                <?php
-                                if ($product['product_number_rating'] > 0) :
+                            <span> <?= $product['product_price_unit'] ?></span>
+                            <?php
+                            if ($product['product_number_rating'] > 0) :
+                                ?>
+                                <div class="product-rating">
+                                    <?php
                                     $rating = $product['product_total_rating'] / $product['product_number_rating'];
                                     for ($i = 0; $i < 5; $i++):
                                         if ($i < $rating) {
@@ -312,10 +318,14 @@
                                             echo '<i class="fa fa-star-o empty"></i>';
                                         }
                                     endfor;
-                                endif;
-                                ?>
-                            </div>
-                            <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
+                                    ?>
+                                </div>
+                                <?php
+                            endif;
+                            ?>
+                            <h2 class="product-name">
+                                <a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>" title="<?= $product['product_name'] ?>"><?= $product['product_name'] ?></a>
+                            </h2>
                             <div class="product-btns">
     <!--                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->

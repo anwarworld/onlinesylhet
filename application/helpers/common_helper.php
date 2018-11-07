@@ -81,9 +81,9 @@ class Common {
         return $query->result_array();
     }
 
-    public static function getProductsByType($productType = 1) {
+    public static function getProductsByType($productType = 1, $limit = 4) {
         $CI = & get_instance();
-        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit,product_discount,product_regular_price,product_total_rating,product_number_rating FROM products WHERE product_status = ? AND product_type = ? order by product_date desc limit 0,6";
+        $sql = "SELECT product_id,product_name,product_image,product_price,product_price_unit,product_discount,product_regular_price,product_total_rating,product_number_rating FROM products WHERE product_status = ? AND product_type = ? order by product_date desc limit 0,$limit";
         $query = $CI->db->query($sql, array(1, $productType));
         return $query->result_array();
     }
