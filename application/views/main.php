@@ -14,22 +14,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="clearfix"></div>
         <?php include_once 'shared/main_navigation.php'; ?>
         <div class="middle-modification right-hide">  <!-- middle-modification left-hide right-hide -->
-            
-            
+
+
             <div class="header-search show-in-800">
-                    <form action="<?= site_url('products/search') ?>" method="post">
-                        <input name="search_key" class="input search-input" type="text" placeholder="Enter your keyword">
-                        <select name="category_id" class="input search-categories">
-                            <option value="0">All Categories</option>
-                            <?php foreach ($parentCategories as $category): ?>
-                                <option value="<?= $category['category_id'] ?>"><?= $category['category_name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                        <button class="search-btn"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
+                <form action="<?= site_url('products/search') ?>" method="post">
+                    <input name="search_key" class="input search-input" type="text" placeholder="Enter your keyword">
+                    <select name="category_id" class="input search-categories">
+                        <option value="0">All Categories</option>
+                        <?php foreach ($parentCategories as $category): ?>
+                            <option value="<?= $category['category_id'] ?>"><?= $category['category_name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <button class="search-btn"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
             <div class="clearfix"></div>
-            
+
             <?php
             if (isset($breadcrumb)) :
                 ?>
@@ -83,6 +83,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
             function right_hide() {
                 $j(".right-fix").toggleClass("right-minimize");
+                if ($j('.right-minimize').length > 0) {
+                    $j(".col-lg-3").toggleClass("col-lg-3 col-lg-2");
+                    $j(".col-xl-3").toggleClass("col-xl-3 col-xl-2");
+                } else {
+                    $j(".col-lg-2").toggleClass("col-lg-2 col-lg-3");
+                    $j(".col-xl-2").toggleClass("col-xl-2 col-xl-3");
+                }
                 $j(".middle-modification").toggleClass("right-hide");
             }
             function menu_show() {

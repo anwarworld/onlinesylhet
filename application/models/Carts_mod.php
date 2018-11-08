@@ -46,6 +46,7 @@ class carts_mod extends CI_Model {
         $this->session->set_userdata('user_address', $delivery_address);
 
         $data['rows'] = $this->session->userdata('carts_data');
+
         $data['cart_quantity'] = $this->session->userdata('cart_quantity');
         $data['cart_total_amount'] = $this->session->userdata('cart_total_amount');
     }
@@ -94,7 +95,7 @@ class carts_mod extends CI_Model {
         }
         $data['order_transaction_id'] = uniqid();
         $data['delivery_method'] = $this->session->userdata('delivery_method');
-        $data['payment_method'] = $this->session->userdata('delivery_method');
+        $data['payment_method'] = $this->session->userdata('payment_method');
         $data['total_quantity'] = $this->session->userdata('cart_quantity');
         $data['total_amount'] = $this->session->userdata('cart_total_amount');
         $data['order_data'] = json_encode($this->session->userdata('carts_data'));

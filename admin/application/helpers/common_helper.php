@@ -63,9 +63,9 @@ class Common {
         $CI = & get_instance();
         $data = array();
         if ($CI->session->userdata('logged')) {
+            $data['user_id'] = $CI->session->userdata('user_id');
             $data['user_name'] = $CI->session->userdata('user_name');
             $data['user_full_name'] = $CI->session->userdata('user_full_name');
-//            $data['user_full_name'] = $CI->session->userdata('user_full_name');
         }
 
         return $data;

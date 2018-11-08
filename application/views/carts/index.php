@@ -52,11 +52,6 @@
                                 <th>SUBTOTAL</th>
                                 <th colspan="2" class="sub-total">&#2547; <?= $carts_info['cart_total_amount'] ?></th>
                             </tr>
-<!--                            <tr>
-                                <th class="empty" colspan="3"></th>
-                                <th>SHIPING</th>
-                                <td colspan="2">Free Shipping</td>
-                            </tr>-->
                             <tr>
                                 <th class="empty" colspan="3"></th>
                                 <th>TOTAL</th>
@@ -65,7 +60,7 @@
                         </tfoot>
                     </table>
                     <div class="pull-right">
-                        <a href="<?= site_url('carts/checkout') ?>" title="Checkout" class="primary-btn">Checkout</a>
+                        <a href="<?= site_url('products') ?>" title="Continue to shopping" class="primary-btn">Continue to Shopping</a> <a href="<?= site_url('carts/checkout') ?>" title="Checkout" class="primary-btn">Checkout</a>
                     </div>
                 </div>
             </div>

@@ -45,12 +45,12 @@
             </div>
             <!-- /section-title -->
             <!-- Product Slick -->
-            <div class="col-md-12 col-sm-6 col-xs-6">
+            <div class="col-md-12">
                 <div class="row">
                     <?php foreach ($featured_producs as $product):
                         ?>
                         <!-- Product Single -->
-                        <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
                             <div class="product product-single">
                                 <div class="product-thumb">
                                     <?php if ($product['product_discount'] > 0): ?>
@@ -234,7 +234,7 @@
             <?php foreach ($latest_producs as $product):
                 ?>
                 <!-- Product Single -->
-                <div class="col-md-2 col-sm-4 col-xs-4">
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
                     <div class="product product-single">
                         <div class="product-thumb">
                             <?php if ($product['product_discount'] > 0): ?>

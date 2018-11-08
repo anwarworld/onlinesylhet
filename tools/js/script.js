@@ -93,12 +93,20 @@ var carts = {
     init: function() {
         $j('.add-to-cart').on('click', function() {
             carts.addToCart(this);
-        });
-        $j('.remove-from-cart').on('click', function() {
-            carts.removeFromCart(this);
+            return false;
         });
         $j('.quantity-value-change').change(function() {
             carts.quantityChange(this);
+            return false;
+        });
+        $j('.shopping-cart-list').on("click", ".remove-from-cart", function() {
+            carts.removeFromCart(this);
+            return false;
+        });
+
+        $j('.shopping-cart-table').on("click", ".remove-from-cart", function() {
+            carts.removeFromCart(this);
+            return false;
         });
 
     },
@@ -125,6 +133,8 @@ var carts = {
             },
             dataType: 'json',
             success: function(jsonData) {
+                $j('p.empty-cart').remove();
+                $j('.product-details-' + product_id).remove();
                 $j('.shopping-cart-list').append(jsonData.dataString);
                 $j('#cart-quantity').html(jsonData.quantity);
                 $j('#cart-quantity').addClass('qty');
@@ -146,7 +156,7 @@ var carts = {
             },
             dataType: 'json',
             success: function(jsonData) {
-                $j('.product-details-' + jsonData.product_id).html("");
+                $j('.product-details-' + jsonData.product_id).remove();
                 $j('#cart-quantity').html(jsonData.quantity);
                 $j('#cart-amount').attr('rel', jsonData.quantity)
                 $j('#cart-amount').html('&#2547; ' + jsonData.totalAmount);

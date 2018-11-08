@@ -52,21 +52,19 @@
                         <?php endif; ?>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="shiping-methods">
                         <div class="section-title">
                             <h4 class="title">Delivery Methods</h4>
                         </div>
-                        <?php foreach ($delivery_methods as $key => $method):
+                        <?php
+                        foreach ($delivery_methods as $key => $method):
                             ?>
-                            <!--<div class="input-checkbox">-->
-                            <input type="radio" name="delivery_method" <?= $delivery_method == $method['method_id'] ? 'checked="checked"' : '' ?> value="<?= $method['method_id'] ?>" id="shipping-<?= $key ?>">
+                        <input type="radio"  name="delivery_method" <?= $delivery_method == $method['method_id'] ? 'checked="checked"' : 'disabled="true"' ?> value="<?= $method['method_id'] ?>" id="shipping-<?= $key ?>">
                             <label for="shipping-<?= $key ?>"><?= $method['method_name'] . ' - &#2547;' . $method['method_fee'] ?></label>
                             <div class="caption">
                                 <p><?= $method['method_des'] ?></p>
                             </div>
-                            <!--</div>-->
                         <?php endforeach; ?>
                         <?= form_error('delivery_method', '<span class="bg-red-active">', '</span>') ?>
                     </div>
@@ -135,22 +133,22 @@
                                 <tr>
                                     <th class="empty" colspan="3"></th>
                                     <th>SUBTOTAL</th>
-                                    <th colspan="2" class="sub-total">&#2547; <?= $carts_info['cart_total_amount'] ?></th>
+                                    <th colspan="2" class="sub-total text-right">&#2547; <?= $carts_info['cart_total_amount'] ?></th>
                                 </tr>
                                 <tr>
                                     <th class="empty" colspan="3"></th>
                                     <th>DELIVERY FEE</th>
-                                    <td colspan="2">Free Shipping</td>
+                                    <td colspan="2" class="text-right">&#2547; <?= $selected_delivery_method['method_fee'] ?></td>
                                 </tr>
                                 <tr>
                                     <th class="empty" colspan="3"></th>
                                     <th>TOTAL</th>
-                                    <th colspan="2" class="total">&#2547; <?= $carts_info['cart_total_amount'] ?></th>
+                                    <th colspan="2" class="total text-right">&#2547; <?= $carts_info['cart_total_amount'] + $selected_delivery_method['method_fee'] ?></th>
                                 </tr>
                             </tfoot>
                         </table>
                         <div class="pull-right">
-                            <button class="primary-btn" type="submit" name="save" value="save" >Place Order</button>
+                            <a href="<?= site_url('products') ?>" title="Continue to shopping" class="primary-btn">Continue to Shopping</a> <button class="primary-btn" type="submit" name="save" value="save" >Place Order</button>
                         </div>
                     </div>
 

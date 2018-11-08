@@ -83,10 +83,9 @@ class Users extends CI_Controller {
             Common::redirect();
         }
         $data['msg'] = $this->session->flashdata('msg');
-        $data['rows'] = $this->users_mod->getAllOrders(0, 10);
         $data['dir'] = 'users';
         $data['page'] = 'order_details';
-        $data['page_title'] = 'My Order List';
+        $data['page_title'] = 'Order Details';
         $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'My Account', 'url' => ''));
         $this->load->view('main', $data);
     }

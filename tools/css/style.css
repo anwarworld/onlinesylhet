@@ -325,6 +325,10 @@ textarea.input {
     width: calc(50% - 2px);
 }
 
+#shopping-cart .shopping-cart-list .empty-cart{
+    padding: 10px;
+    text-align: center;
+}
 /*=========================================================
         03 -> NAVIGATION
 ===========================================================*/
@@ -858,7 +862,7 @@ textarea.input {
 }
 
 .product.product-single .product-rating {
-/*    float: right;*/
+    /*    float: right;*/
     /*margin-top: 0px;*/
 }
 .product.product-single h3 {
@@ -1132,24 +1136,15 @@ textarea.input {
     display: inline-block;
 }
 
-.store-pages {
-    display: inline-block;
-    margin-left: 15px;
-}
-
-.store-pages li {
-    display: inline-block;
-    margin-right: 6px;
-}
-
-.store-pages li a {
-    display: block;
-    min-width: 10px;
-    text-align: center;
-}
-
-.store-pages li.active {
+.pagination{margin: 15px;}
+.pagination li a {
     color: #F8694A;
+}
+
+.pagination li.active a{
+    background-color: #F8694A;
+    border-color: #F8694A;
+    color: #FFFFFF;
 }
 
 /*=========================================================
@@ -1613,9 +1608,7 @@ textarea.input {
 }
 
 @media only screen and (max-width: 480px) {
-    [class*='col-xs'] {
-        width: 100%;
-    }
+    
 }
 
 

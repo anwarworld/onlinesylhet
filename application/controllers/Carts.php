@@ -30,7 +30,6 @@ class Carts extends CI_Controller {
     }
 
     public function checkout() {
-
         if (filter_input(INPUT_POST, 'save')) {
             if (Common::isLoggedIn()) {
                 if ($this->form_validation->run('valid_place_order')) {
@@ -51,6 +50,17 @@ class Carts extends CI_Controller {
 
         $data['payment_methods'] = $this->carts_mod->getPaymentMethods();
         $data['delivery_methods'] = $this->carts_mod->getDeliveryMethods();
+        $carts_info = Common::getCartsData();
+        foreach ($data['delivery_methods'] as $method) {
+            if ($carts_info['cart_total_amount'] >= $method['method_min_amount']) {
+                $data['delivery_method'] = $method['method_id'];
+                $data['selected_delivery_method'] = $method;
+                break;
+            } else {
+                $data['delivery_method'] = $method['method_id'];
+                $data['selected_delivery_method'] = $method;
+            }
+        }
         $data['dir'] = 'carts';
         $data['page'] = 'checkout';
         $data['page_title'] = 'Cart';

@@ -98,7 +98,7 @@ class Products extends CI_Controller {
         $data['product_list'] = $this->products_mod->getCategoryProducts($category_id, $start, $config['per_page']);
 //       Pagination End
         $data['dir'] = 'products';
-        $data['page'] = 'category';
+        $data['page'] = 'index';
         $data['page_title'] = 'Products &raquo; ' . $data['category_name'];
         $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => $data['category_name'], 'url' => ''));
         $this->load->view('main', $data);
@@ -107,7 +107,7 @@ class Products extends CI_Controller {
     public function search() {
         $data['product_list'] = $this->products_mod->getAllProducts(false, 0, 10);
         $data['dir'] = 'products';
-        $data['page'] = 'search';
+        $data['page'] = 'index';
         $data['page_title'] = 'Search Products';
         $data['breadcrumb'] = array(array('title' => 'Home', 'url' => site_url('home')), array('title' => 'Products', 'url' => site_url('products')), array('title' => $data['category_name'], 'url' => ''));
         $this->load->view('main', $data);

@@ -172,7 +172,7 @@
                     <?php
                 endforeach;
             else :
-                echo '<p style="text-align:center;padding:10px;">Sorry! Your cart is empty.</p>';
+                echo '<p class="empty-cart">Sorry! Your cart is empty.</p>';
             endif;
             ?>
         </div>
