@@ -14,8 +14,8 @@ class Home extends CI_Controller {
         $data['page'] = 'index';
         $data['page_title'] = 'Home';
         $data['sliders'] = $this->home_mod->getSliders();
-        $data['latest_producs'] = Common::getProductsByType(4);
-        $data['featured_producs'] = Common::getProductsByType(2);
+        $data['latest_producs'] = Common::getProductsByType(4, 6);
+        $data['featured_producs'] = Common::getProductsByType(2, 6);
         $data['deal_producs'] = Common::getProductsByType(3, 10);
         $this->load->view('main', $data);
     }

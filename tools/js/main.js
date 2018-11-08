@@ -73,8 +73,8 @@
   });
 
   $('#product-slick-2').slick({
-    slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToShow: 4,
+    slidesToScroll: 3,
     autoplay: true,
     infinite: true,
     speed: 300,

@@ -24,7 +24,7 @@
                         foreach ($product_list as $product) {
                             ?>
                             <!-- Product Single -->
-                            <div class="col-md-2 col-sm-6 col-xs-6">
+                            <div class="col-md-2 col-sm-4 col-xs-4">
                                 <div class="product product-single">
                                     <div class="product-thumb">
                                         <?php if ($product['product_discount'] > 0): ?>
@@ -32,6 +32,7 @@
                                                 <span class="sale">-<?= $product['product_discount'] ?>%</span>
                                             </div>
                                         <?php endif; ?>
+                                        <button class="main-btn quick-view add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                                         <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                     </div>
                                     <div class="product-body">
@@ -60,18 +61,11 @@
                                         endif;
                                         ?>
                                         <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>" title="<?= $product['product_name'] ?>"><?= $product['product_name'] ?></a></h2>
-                                        <div class="product-btns">
-                                            <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- /Product Single -->
                             <?php
-                            if ($inc % 6 == 0) {
-                                echo '<div class="clearfix visible-md visible-lg visible-sm visible-xs"></div>';
-                            }
-                            $inc++;
                         }
                         ?>
                     </div>

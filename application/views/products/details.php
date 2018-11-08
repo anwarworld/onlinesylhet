@@ -10,29 +10,6 @@
                         <div class="product-view">
                             <img src="uploads/products/<?= $product_image ?>" alt="<?= $product_name ?>">
                         </div>
-                        <!--                        <div class="product-view">
-                                                    <img src="./img/main-product02.jpg" alt="">
-                                                </div>
-                                                <div class="product-view">
-                                                    <img src="./img/main-product03.jpg" alt="">
-                                                </div>
-                                                <div class="product-view">
-                                                    <img src="./img/main-product04.jpg" alt="">
-                                                </div>-->
-                    </div>
-                    <div id="product-view">
-                        <div class="product-view">
-                            <img src="uploads/products/thumb<?= $product_image ?>" alt="<?= $product_name ?>">
-                        </div>
-                        <!--                        <div class="product-view">
-                                                    <img src="./img/thumb-product02.jpg" alt="">
-                                                </div>
-                                                <div class="product-view">
-                                                    <img src="./img/thumb-product03.jpg" alt="">
-                                                </div>
-                                                <div class="product-view">
-                                                    <img src="./img/thumb-product04.jpg" alt="">
-                                                </div>-->
                     </div>
                 </div>
                 <div class="col-md-6">

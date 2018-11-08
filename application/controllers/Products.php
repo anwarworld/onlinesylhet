@@ -20,7 +20,7 @@ class Products extends CI_Controller {
         $config['uri_segment'] = 3;
         $config['base_url'] = site_url('products/index');
         $config['total_rows'] = $total_rows;
-        $config['per_page'] = 20;
+        $config['per_page'] = 18;
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
         $config['cur_tag_open'] = '<li class="active">';
@@ -82,7 +82,7 @@ class Products extends CI_Controller {
         $config['uri_segment'] = 5;
         $config['base_url'] = site_url('products/category/' . $category_id . '/' . $category_name . '/');
         $config['total_rows'] = $total_rows;
-        $config['per_page'] = 20;
+        $config['per_page'] = 18;
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
         $config['cur_tag_open'] = '<li class="active">';

@@ -34,52 +34,6 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <!-- banner -->
-            <div class="col-md-4 col-sm-6">
-                <a class="banner banner-1" href="#">
-                    <img src="images/banner10.jpg" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-
-            <!-- banner -->
-            <div class="col-md-4 col-sm-6">
-                <a class="banner banner-1" href="#">
-                    <img src="images/banner11.jpg" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-
-            <!-- banner -->
-            <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
-                <a class="banner banner-1" href="#">
-                    <img src="images/banner12.jpg" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /section -->
-
-<!-- section -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
             <!-- section-title -->
             <div class="col-md-12">
                 <div class="section-title">
@@ -96,7 +50,7 @@
                     <?php foreach ($featured_producs as $product):
                         ?>
                         <!-- Product Single -->
-                        <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
                             <div class="product product-single">
                                 <div class="product-thumb">
                                     <?php if ($product['product_discount'] > 0): ?>
@@ -104,6 +58,7 @@
                                             <span class="sale">-<?= $product['product_discount'] ?>%</span>
                                         </div>
                                     <?php endif; ?>
+                                    <button class="main-btn quick-view add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                                     <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                                 </div>
                                 <div class="product-body">
@@ -132,11 +87,6 @@
                                     endif;
                                     ?>
                                     <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
-                                    <div class="product-btns">
-    <!--                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
-                                        <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -175,6 +125,7 @@
                                 <span class="sale">-<?= $product['product_discount'] ?>%</span>
                             </div>
                         <?php endif; ?>
+                        <button class="main-btn quick-view add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                         <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                     </div>
                     <div class="product-body">
@@ -203,11 +154,6 @@
                         endif;
                         ?>
                         <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
-                        <div class="product-btns">
-<!--                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
-                            <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -216,52 +162,48 @@
             <!-- Product Slick -->
             <div class="col-md-9 col-sm-6 col-xs-6">
                 <div class="row">
-                    <div id="product-slick-2" class="product-slick">
-                        <?php foreach ($deal_producs as $product):
-                            ?>
-                            <!-- Product Single -->
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <?php if ($product['product_discount'] > 0): ?>
-                                        <div class="product-label">
-                                            <span class="sale">-<?= $product['product_discount'] ?>%</span>
-                                        </div>
-                                    <?php endif; ?>
-                                    <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-price">&#2547; <?= $product['product_price'] ?>
+                        <div id="product-slick-2" class="product-slick">
+                            <?php foreach ($deal_producs as $product):
+                                ?>
+                                <!-- Product Single -->
+                                <div class="product product-single">
+                                    <div class="product-thumb">
                                         <?php if ($product['product_discount'] > 0): ?>
-                                            <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
+                                            <div class="product-label">
+                                                <span class="sale">-<?= $product['product_discount'] ?>%</span>
+                                            </div>
                                         <?php endif; ?>
-                                    </h3>
-                                    <span><?= $product['product_price_unit'] ?></span>
-                                    <?php
-                                    if ($product['product_number_rating'] > 0) :
-                                        ?>
-                                        <div class="product-rating">
-                                            <?php
-                                            $rating = $product['product_total_rating'] / $product['product_number_rating'];
-                                            for ($i = 0; $i < 5; $i++):
-                                                if ($i < $rating) {
-                                                    echo '<i class="fa fa-star"></i>';
-                                                } else {
-                                                    echo '<i class="fa fa-star-o empty"></i>';
-                                                }
-                                            endfor;
-                                            ?>
-                                        </div>
+                                        <button class="main-btn quick-view add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                        <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3 class="product-price">&#2547; <?= $product['product_price'] ?>
+                                            <?php if ($product['product_discount'] > 0): ?>
+                                                <del class="product-old-price">&#2547; <?= $product['product_regular_price'] ?></del>
+                                            <?php endif; ?>
+                                        </h3>
+                                        <span><?= $product['product_price_unit'] ?></span>
                                         <?php
-                                    endif;
-                                    ?>
-                                    <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
-                                    <div class="product-btns">
-    <!--                                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
-                                        <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                        if ($product['product_number_rating'] > 0) :
+                                            ?>
+                                            <div class="product-rating">
+                                                <?php
+                                                $rating = $product['product_total_rating'] / $product['product_number_rating'];
+                                                for ($i = 0; $i < 5; $i++):
+                                                    if ($i < $rating) {
+                                                        echo '<i class="fa fa-star"></i>';
+                                                    } else {
+                                                        echo '<i class="fa fa-star-o empty"></i>';
+                                                    }
+                                                endfor;
+                                                ?>
+                                            </div>
+                                            <?php
+                                        endif;
+                                        ?>
+                                        <h2 class="product-name"><a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>"><?= $product['product_name'] ?></a></h2>
                                     </div>
                                 </div>
-                            </div>
                             <!-- /Product Single -->
                             <?php
                         endforeach;
@@ -292,10 +234,15 @@
             <?php foreach ($latest_producs as $product):
                 ?>
                 <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="col-md-2 col-sm-4 col-xs-4">
                     <div class="product product-single">
                         <div class="product-thumb">
-                            <!--<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>-->
+                            <?php if ($product['product_discount'] > 0): ?>
+                                <div class="product-label">
+                                    <span class="sale">-<?= $product['product_discount'] ?>%</span>
+                                </div>
+                            <?php endif; ?>
+                            <button class="main-btn quick-view add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                             <img src="uploads/products/thumb<?= $product['product_image'] ?>" alt="<?= $product['product_name'] ?>">
                         </div>
                         <div class="product-body">
@@ -326,11 +273,6 @@
                             <h2 class="product-name">
                                 <a href="<?= site_url('products/details/' . $product['product_id'] . '/' . Common::encodeMyURL($product['product_name'])) ?>" title="<?= $product['product_name'] ?>"><?= $product['product_name'] ?></a>
                             </h2>
-                            <div class="product-btns">
-    <!--                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>-->
-                                <button class="primary-btn add-to-cart" rel="<?= $product['product_image'] ?>" value="<?= $product['product_id'] ?>" title="<?= $product['product_name'] ?>" data-rprice="<?= $product['product_regular_price'] ?>" data-price="<?= $product['product_price'] ?>" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                            </div>
                         </div>
                     </div>
                 </div>
